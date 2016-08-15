@@ -1,0 +1,185 @@
+/*
+SCSS variables are information about icon"s compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$logo-hp-name: "logo-hp";
+$logo-hp-x: 0px;
+$logo-hp-y: 42px;
+$logo-hp-offset-x: 0px;
+$logo-hp-offset-y: -42px;
+$logo-hp-width: 200px;
+$logo-hp-height: 41px;
+$logo-hp-total-width: 242px;
+$logo-hp-total-height: 83px;
+$logo-hp-image: "../images/sprite.png?v=3f804--1";
+$logo-hp: (0px, 42px, 0px, -42px, 200px, 41px, 242px, 83px, "../images/sprite.png?v=3f804--1", "logo-hp");
+$logo-pt-name: "logo-pt";
+$logo-pt-x: 0px;
+$logo-pt-y: 0px;
+$logo-pt-offset-x: 0px;
+$logo-pt-offset-y: 0px;
+$logo-pt-width: 242px;
+$logo-pt-height: 42px;
+$logo-pt-total-width: 242px;
+$logo-pt-total-height: 83px;
+$logo-pt-image: "../images/sprite.png?v=3f804--1";
+$logo-pt: (0px, 0px, 0px, 0px, 242px, 42px, 242px, 83px, "../images/sprite.png?v=3f804--1", "logo-pt");
+$logo-hp-2x-name: "logo-hp@2x";
+$logo-hp-2x-x: 0px;
+$logo-hp-2x-y: 84px;
+$logo-hp-2x-offset-x: 0px;
+$logo-hp-2x-offset-y: -84px;
+$logo-hp-2x-width: 400px;
+$logo-hp-2x-height: 82px;
+$logo-hp-2x-total-width: 484px;
+$logo-hp-2x-total-height: 166px;
+$logo-hp-2x-image: "../images/sprite@2x.png?v=3f804--1";
+$logo-hp-2x: (0px, 84px, 0px, -84px, 400px, 82px, 484px, 166px, "../images/sprite@2x.png?v=3f804--1", "logo-hp@2x");
+$logo-pt-2x-name: "logo-pt@2x";
+$logo-pt-2x-x: 0px;
+$logo-pt-2x-y: 0px;
+$logo-pt-2x-offset-x: 0px;
+$logo-pt-2x-offset-y: 0px;
+$logo-pt-2x-width: 484px;
+$logo-pt-2x-height: 84px;
+$logo-pt-2x-total-width: 484px;
+$logo-pt-2x-total-height: 166px;
+$logo-pt-2x-image: "../images/sprite@2x.png?v=3f804--1";
+$logo-pt-2x: (0px, 0px, 0px, 0px, 484px, 84px, 484px, 166px, "../images/sprite@2x.png?v=3f804--1", "logo-pt@2x");
+$spritesheet-width: 242px;
+$spritesheet-height: 83px;
+$spritesheet-image: "../images/sprite.png?v=3f804--1";
+$spritesheet-sprites: ($logo-hp, $logo-pt, "dummy");
+$spritesheet: (242px, 83px, "../images/sprite.png?v=3f804--1", $spritesheet-sprites);
+$retina-spritesheet-width: 484px;
+$retina-spritesheet-height: 166px;
+$retina-spritesheet-image: "../images/sprite@2x.png?v=3f804--1";
+$retina-spritesheet-sprites: ($logo-hp-2x, $logo-pt-2x, "dummy");
+$retina-spritesheet: (484px, 166px, "../images/sprite@2x.png?v=3f804--1", $retina-spritesheet-sprites);
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+$logo-hp-group-name: "logo-hp";
+$logo-hp-group: ("logo-hp", $logo-hp, $logo-hp-2x);
+$logo-pt-group-name: "logo-pt";
+$logo-pt-group: ("logo-pt", $logo-pt, $logo-pt-2x);
+$retina-groups: ($logo-hp-group, $logo-pt-group, "dummy");
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url('#{$sprite-image}');
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ("icon-home", $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+@mixin retina-sprite-hover($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite-position($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-position($normal-sprite);
+  }
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

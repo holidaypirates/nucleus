@@ -1,0 +1,33 @@
+/**
+ * Test
+ *
+ * @molecule Sponsors
+ * @markup
+ *  <div class="sponsors">
+ *    <div class="sponsors__sponsor sponsors--hp"></div>
+ *    <div class="sponsors__sponsor sponsors--pt"></div>
+ *  </div>
+ */
+.sponsors {
+  text-align: center;
+
+  &::before {
+    content: 'Made by pirates from';
+    display: block;
+    margin-bottom: 2em;
+    color: $color--light-gray;
+    font-size: 12px;
+  }
+
+  .sponsors__sponsor {
+    display: inline-block;
+    border: none;
+  }
+  .sponsors__sponsor.sponsors--hp {
+    @include retina-sprite($logo-hp-group);
+    margin-right: 40px;
+  }
+  .sponsors__sponsor.sponsors--pt {
+    @include retina-sprite($logo-pt-group);
+  }
+}

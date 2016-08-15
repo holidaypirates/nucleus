@@ -1,0 +1,5 @@
+node_modules
+coverage
+doc/build
+build
+styleguide

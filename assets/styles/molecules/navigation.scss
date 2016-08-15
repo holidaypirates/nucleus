@@ -1,0 +1,162 @@
+// navigation.scss -- Top-level navigation
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * Navigation bar for the top-level navigation.
+ *
+ * @molecule Navigation-List
+ * @section Navigation
+ * @markup
+ *  <ul class="SG-nav">
+ *    <li>
+ *      <a class="SG-nav__item" href='#'>Item #1</a>
+ *    </li>
+ *    <li>
+ *      <a class="SG-nav__item SG-nav__item--active" href='#'>Item #2</a>
+ *    </li>
+ *    <li>
+ *      <a class="SG-nav__item" href='#'>Item #3</a>
+ *    </li>
+ *  </ul>
+ */
+.SG-nav {
+  @include reset();
+  list-style-type: none;
+  text-align: center;
+
+  li {
+    display: inline-block;
+  }
+
+  .SG-nav__item {
+    text-decoration: none;
+    display: inline-block;
+    padding: 22px 10px 24px;
+    margin: 0 15px;
+    color: $color--gray;
+    font-size: 16px;
+    &:hover {
+      color: $color--dark-gray;
+      border-bottom: 2px solid $color--light-gray;
+    }
+  }
+
+  .SG-nav__item--active {
+    border-bottom: 3px solid $color--accent;
+    margin-bottom: -1px;
+    color: $color--dark-gray;
+    &:hover {
+      border-bottom: 3px solid $color--accent;
+    }
+  }
+}
+
+/**
+ * Icon navigation list
+ *
+ * @molecule Icon-Navigation
+ * @section Navigation
+ * @markup
+ *  <ul class="SG-nav-icons">
+ *    <li>
+ *      <a class="SG-nav-icons__item">
+ *        <i class="SG-ico SG-ico--question"></i>
+ *      </a>
+ *    </li>
+ *    <li>
+ *      <a class="SG-nav-icons__item">
+ *        <i class="SG-ico SG-ico--copy"></i>
+ *      </a>
+ *    </li>
+ *  </ul>
+ */
+.SG-nav-icons {
+  @include reset();
+  list-style-type: none;
+  line-height: 67px;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 2em;
+    }
+  }
+
+  .SG-nav-icons__item {
+    color: $color--light-gray;
+    &:hover {
+      color: $color--gray;
+    }
+
+    &.SG--active {
+      color: $color--dark-gray;
+    }
+  }
+}
+
+/**
+ * A nested table of content list, suitable for two-level navigation.
+ *
+ * @molecule Table of content
+ * @section Navigation
+ * @markup
+ *  <div class="SG-toc">
+ *    <ul>
+ *      <li class="SG-toc__category">A category</li>
+ *      <li>First Level #1</li>
+ *      <li>
+ *        First Level #2
+ *        <ul>
+ *          <li>Second Level #1</li>
+ *          <li>Second Level #2</li>
+ *        </ul>
+ *      </li>
+ *      <li class="SG-toc__category">A category</li>
+ *      <li>First Level #3</li>
+ *    </ul>
+ *  </div>
+ */
+.SG-toc {
+  margin-bottom: 4em;
+
+  ul {
+    padding-left: 0em;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  & > ul > li {
+    list-style-type: none;
+    font-size: 14px;
+  }
+
+  & > ul > li > ul {
+    padding-left: 1.5em;
+    font-size: 14px;
+    list-style-type: disc;
+    color: $color--dark-gray;
+    margin-bottom: 1em;
+  }
+
+  & > ul > li > ul > li > ul {
+    font-size: 12px;
+  }
+
+  .SG-toc__category {
+    color: $color--accent;
+    border-bottom: 1px dashed $color--light-gray;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 16px;
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+  }
+}

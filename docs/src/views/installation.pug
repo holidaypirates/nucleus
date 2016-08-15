@@ -1,0 +1,53 @@
+extends layouts/doc-page
+
+block title
+  | Set-Up
+
+block content
+  h1.SG-h1 Installation
+
+  h2.SG-h2 Requirements
+  p.SG-p.
+    Nucleus is a JavaScript application meant to be installed with NPM and run on Node.
+    It has some other module dependencies as well which could require additional system
+    features. For Nucleus itself, the lowest we tested was a MacOS system running
+    <strong>Node ~ 0.12</strong>.
+
+  h2.SG-h2 Global installation
+  p.SG-p.
+    To always have Nucleus at hand, install it globally and use it for all your projects.
+  code.
+    npm i -g nucleus-styleguide
+
+  h2.SG-h2 Per-project installation
+  p.SG-p.
+    To have separate Nucleus installations on a per project basis, add it to the project.json
+    file or install it as a dev dependency.
+  code.
+    npm i --save-dev nucleus-styleguide
+  p.SG-p.
+    This documentation is assuming you've installed Nucleus globally. If you've decided for
+    the local setup, you've got to run it like
+  code.
+    node ./node_modules/bin/nucleus
+
+  h2.SG-h2 A handy shortcut
+  p.SG-p.
+    For easier access, define a script in your package.json
+  code.
+    "scripts": {
+      "styleguide": "nucleus --config config.nucleus.json"
+    }
+  p.SG-p.
+    Run it as easy as
+  code.
+    npm run styleguide
+
+  h2.SG-h2 Adding a configuration
+  p.SG-p.
+    With Nucleus, it's a piece of cake to create a new configuration. Just go with the built-in setup.
+  code.
+    nucleus init
+  p.SG-p.
+    If you like to stay away from wizards, head over to the <a class="SG-a SG-a--pink" href="configuration.html">configuration section</a>
+

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/icons.eot');
+  src: url('../fonts/icons.eot?#iefix') format('eot'),
+    url('../fonts/icons.woff') format('woff'),
+    url('../fonts/icons.ttf') format('truetype'),
+    url('../fonts/icons.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ico:before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.ico-2x { font-size: 2em; }
+.ico-3x { font-size: 3em; }
+.ico-4x { font-size: 4em; }
+.ico-5x { font-size: 5em; }
+.ico-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+
+/**
+ * @icon .ico--logo
+ * @deprecated 
+ * @markup
+ *  <i class="ico ico--logo"></i>
+ */
+  .ico--logo:before {
+    content: "\EA01"
+  }
+
+/**
+ * @icon .ico--github
+ * @markup
+ *  <i class="ico ico--github"></i>
+ */
+  .ico--github:before {
+    content: "\EA03"
+  }
+
+/**
+ * @icon .ico--tools
+ * @markup
+ *  <i class="ico ico--tools"></i>
+ */
+  .ico--tools:before {
+    content: "\EA04"
+  }
+
+/**
+ * @icon .ico--molecule
+ * @markup
+ *  <i class="ico ico--molecule"></i>
+ */
+  .ico--molecule:before {
+    content: "\EA05"
+  }
+
+/**
+ * @icon .ico--rescue
+ * @markup
+ *  <i class="ico ico--rescue"></i>
+ */
+  .ico--rescue:before {
+    content: "\EA06"
+  }
+
+/**
+ * @icon .ico--search
+ * @markup
+ *  <i class="ico ico--search"></i>
+ */
+  .ico--search:before {
+    content: "\EA07"
+  }
+
+/**
+ * @icon .ico--glide
+ * @markup
+ *  <i class="ico ico--glide"></i>
+ */
+  .ico--glide:before {
+    content: "\EA08"
+  }

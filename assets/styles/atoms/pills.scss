@@ -1,0 +1,33 @@
+// pills.scss -- Styles for inline pills
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * Pill for encapsulated content or numerical counters.
+ *
+ * @atom Pill
+ * @section Typography
+ * @markup
+ *  <div class="SG-pill">Content</div>
+ *  <div class="SG-pill">12</div>
+ */
+.SG-pill {
+  @include lato(300);
+
+  background: $color--accent;
+  font-size: 10px;
+  display: inline-block;
+  padding: 4px 9px;
+  margin-left: 1em;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  vertical-align: baseline;
+  position: relative;
+  top: -3px;
+}

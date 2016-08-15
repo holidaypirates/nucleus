@@ -1,0 +1,20 @@
+block nav
+ -var selected = 'Documentation'; //default
+
+-var menu = { 'Documentation': 'getting-started.html', 'Demo': 'demo/index.html' };
+
+header.SG-header
+  a(href="index.html").SG-logo
+    span.SG-logo__icon.ico.ico--logo
+    span.SG-logo__name Nucleus
+  ul.SG-nav
+    each link, title in menu
+      li
+        if selected === title
+          a.SG-nav__item.SG-nav__item--active(href=link)= title
+        else
+          a.SG-nav__item(href=link)= title
+  ul.SG-nav-icons
+    li
+      a.SG-nav-icons__item(href='https://github.com/holidaypirates/nucleus', title='View on GitHub', target='_blank')
+        i.ico.ico--github

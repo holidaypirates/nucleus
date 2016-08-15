@@ -1,0 +1,52 @@
+// layouts.scss -- Page layouts for Nucleus and the doc pages
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * Basic layout container with a fixed width, centered horizontally in the page.
+ *
+ * @structure Single-column Layout
+ * @section Layouts
+ * @markup
+ *  <div class="SG-layout">@{include:.SG-p}</div>
+ */
+.SG-layout {
+  @include reset();
+  width: 100%;
+  max-width: 937px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/**
+ * Two-colum layout with a wider main content and a narrow column next
+ * to it, providing space for the sidebar on the documentation pages.
+ *
+ * @structure Two-column layout
+ * @section Layouts
+ * @markup
+ *  <div class="SG-layout SG-layout--two-columns">
+ *    <div class="SG-layout__sidebar">
+ *      @{include:.SG-toc}
+ *    </div>
+ *    <div class="SG-layout__content">
+ *      @{include:.SG-p}
+ *    </div>
+ *  </div>
+ */
+.SG-layout--two-columns {
+  .SG-layout__sidebar {
+    float: left;
+    width: 20%;
+  }
+  .SG-layout__content {
+    float: right;
+    width: 75%;
+  }
+}

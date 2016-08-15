@@ -1,0 +1,47 @@
+//-
+ * structures.pug -- Compose the structures page
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+extends ./common/layout.pug
+
+include ./common/sections.pug
+include ./common/toc.pug
+
+block title
+  | Structures
+
+block nav
+  -var selected = 'Structures';
+
+block content
+  .SG-row
+    .SG-gr-12
+      .SG-h1 Structures
+
+  .SG-row
+    .SG-gr-6
+      .SG-h3 Table of content
+    .SG-gr-6
+      .SG-h3 What are Structures?
+
+  .SG-row
+    .SG-gr-6.SG-toc
+      +toc(styles.Structures)
+    .SG-gr-6
+      .SG-p.
+        Structures are the most complex types. They may even consist of multiple molecules
+        or other structures again. The header of this page is surely a structure.
+      .SG-p.
+        To mark a variable or mixin as a structure, annotate it with the <span class="SG-strong">@structure</span> tag, optionally followed by a sub-section.
+
+  if meta.demo
+    include ./common/demo.pug
+
+  if styles.Structures
+    +section-second-level(styles.Structures)

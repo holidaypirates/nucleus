@@ -1,0 +1,46 @@
+//-
+ * colors.pug -- Render a color nuclide component
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+mixin colors-header()
+  div.SG-row.SG-table
+    div.SG-gr-2.SG-no-gutter-left
+    div.SG-gr-3
+      div.SG-table__head.SG-table__cell Color
+    div.SG-gr-2
+      div.SG-table__head.SG-table__cell Variable
+    div.SG-gr-2
+      div.SG-table__head.SG-table__cell Hex
+    div.SG-gr-3.SG-no-gutter-right
+      div.SG-table__head.SG-table__cell RGBA
+
+mixin color(color)
+  div.SG-row.SG-table.SG-row-align-middle
+    a.SG-anchor(name=color.hash)
+    div.SG-gr-2.SG-no-gutter-left
+      div.SG-table__cell
+        div.SG-color-preview
+          div.SG-color-preview__circle(style="background-color: " + color.values.hex + "; border-color: " + color.values.darker)
+          div.SG-color-preview__typo(style="color: " + color.values.hex) Aa
+    div.SG-gr-3
+      div.SG-table__cell
+        span.SG-strong
+          if (color.deprecated)
+            span.SG-pill deprecated
+          else
+            | #{color.description}
+    div.SG-gr-2
+      div.SG-table__cell
+        span.SG-a(data-d-copy, data-clipboard-text=color.name) #{color.name}
+    div.SG-gr-2
+      div.SG-table__cell
+        span.SG-a(data-d-copy, data-clipboard-text=color.values.hex) #{color.values.hex}
+    div.SG-gr-3.SG-no-gutter-right
+      div.SG-table__cell
+        span.SG-a(data-d-copy, data-clipboard-text=color.values.rgba) #{color.values.rgba}

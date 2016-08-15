@@ -1,0 +1,64 @@
+//-
+ * mixin.pug -- Render a mixin nuclide component
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+mixin mixins (mixins)
+  -for(var m in mixins)
+    +mixin(mixins[m].mixin)
+
+mixin mixin (mixin)
+  div.SG-component
+    div.SG-row
+      div.SG-gr-8
+        div.SG-mixin
+          a.SG-anchor(name=mixin.hash)
+          span.SG-mixin__name #{mixin.name}
+          span.SG-mixin__parameters #{mixin.signature}
+          if (mixin.deprecated)
+            span.SG-pill deprecated
+          span.SG-mixin__file #{mixin.file}
+      div.SG-gr-4.SG-txt-right
+        if mixin.example
+          div.SG-button.SG-button--ico(data-d-code-preview-toggle)
+            span.SG-ico.SG-ico--code
+            | Show example
+
+    div.SG-row
+      div.SG-gr-12
+        div.SG-p #{mixin.description}
+
+    -if(mixin.parameters.length > 0)
+      div.SG-row
+        div.SG-gr-12
+          +mixin-parameters(mixin.parameters)
+
+    if mixin.example
+      div.SG-row
+        div.SG-gr-12
+          div.SG-code.SG-code--hidden.SG-component__markup.language-scss(data-d-code-preview)
+            code #{mixin.example}
+
+mixin mixin-parameters(parameters)
+  div.SG-row.SG-table
+    div.SG-gr-3
+      div.SG-table__head.SG-table__cell Parameter
+    div.SG-gr-1
+      div.SG-table__head.SG-table__cell Optional
+    div.SG-gr-8
+      div.SG-table__head.SG-table__cell Description
+
+  -for(var p in parameters)
+    div.SG-row.SG-table
+      div.SG-gr-3
+        div.SG-table__cell #{parameters[p].name}
+      div.SG-gr-1
+        div.SG-table__cell.SG-txt-center
+          | !{parameters[p].optional ? '&#10004;' : '' }
+      div.SG-gr-8
+        div.SG-table__cell #{parameters[p].description}

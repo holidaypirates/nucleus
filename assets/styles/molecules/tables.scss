@@ -1,0 +1,54 @@
+// tables.scss -- Deprecated table style for doc pages
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * A generic table style with header row. Previously used on documentation pages,
+ * but has been repaced by the Nuclide preview.
+ *
+ * @deprecated
+ * @molecule Generic Table
+ * @markup
+ *  <table class="SG-table">
+ *    <thead>
+ *      <tr>
+ *        <th class="SG-table__cell SG-table__head">Head #1</th>
+ *        <th class="SG-table__cell SG-table__head">Head #2</th>
+ *        <th class="SG-table__cell SG-table__head">Head #3</th>
+ *      </tr>
+ *    </thead>
+ *    <tbody>
+ *      <tr>
+ *        <td class="SG-table__cell">Cell #1</td>
+ *        <td class="SG-table__cell">Cell #2</td>
+ *        <td class="SG-table__cell">Cell #3</td>
+ *      </tr>
+ *      <tr>
+ *        <td class="SG-table__cell">Cell #1</td>
+ *        <td class="SG-table__cell">Cell #2</td>
+ *        <td class="SG-table__cell">Cell #3</td>
+ *      </tr>
+ *    </tbody>
+ *   </table>
+ */
+.SG-table {
+  @include reset();
+  width: 100%;
+
+  .SG-table__cell {
+    padding: 10px 0;
+    margin: 10px 0;
+    color: $color--gray;
+  }
+
+  .SG-table__head {
+    text-align: left;
+    color: $color--dark-gray;
+    border-bottom: 1px solid $color--light-gray;
+  }
+}

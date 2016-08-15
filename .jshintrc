@@ -1,0 +1,15 @@
+{
+  "browser": true,
+  "esnext": true,
+  "globals": {
+    "module": true,
+    "require": true,
+    "define": true,
+    "jQuery": true,
+    "$": true,
+    "F": true,
+    "console": true
+  },
+  "undef": true,
+  "unused": true
+}

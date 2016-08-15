@@ -1,0 +1,46 @@
+//-
+ * molecules.pug -- Compose the molecules page
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+extends ./common/layout.pug
+
+include ./common/sections.pug
+
+block title
+  | Molecules
+
+block nav
+  -var selected = 'Molecules';
+
+block content
+  .SG-row
+    .SG-gr-12
+      .SG-h1 Molecules
+
+  .SG-row
+    .SG-gr-6
+      .SG-h3 Table of content
+    .SG-gr-6
+      .SG-h3 What are Molecules?
+
+  .SG-row
+    .SG-gr-6.SG-toc
+      +toc(styles.Molecules)
+    .SG-gr-6
+      .SG-p.
+        Molecules consist of one or more nested rules, but each of them is not more than an atom.
+        For example, using icons or buttons in molecules is valid, but using other molecules is not.
+      .SG-p.
+        To mark an element as molecule, annotate it with the <span class="SG-strong">@molecule</span> tag, followed by the name of the component.
+
+  if meta.demo
+    include ./common/demo.pug
+
+  if styles.Molecules
+    +section-second-level(styles.Molecules)

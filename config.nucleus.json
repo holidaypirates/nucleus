@@ -1,0 +1,12 @@
+{
+  "title":  "Nucleus",
+  "files":  [
+    "assets/styles/**/*.scss",
+    "assets/styles/nuclides/icons.css",
+    "docs/src/styles/nuclides/icons.css",
+    "docs/src/styles/**/*.scss"
+  ],
+  "css": "../docs/build/styles/app.css",
+  "target"  : "styleguide",
+  "namespace": null
+}

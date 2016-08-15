@@ -1,0 +1,49 @@
+// z-index.scss -- Z-index management
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * Z-map for use with the @z mixin.
+ *
+ * @section Config
+ * @nuclide Z-Map
+ */
+$z-map: (
+  default: (
+    search: 1
+  ),
+  search: (
+    input: 1
+  )
+);
+
+/**
+ * Mixin to handle z-index positions amongst components as well as globally.
+ *
+ * @mixin
+ * @section Tools
+ * @param $name Name of the z-index definition.
+ * @param $type Scope of the $name element
+ * @param $z Map of configured z-indecies
+ * @example
+ *  @include z(...)
+ */
+@mixin z($name, $type: default, $z: $z-map) {
+  // Check if 'type' is available
+  @if map-has-key($z, $type) {
+
+    // Check if 'name' is available
+    @if map-has-key(map-get($z,$type), $name) {
+      z-index: map-get(map-get($z,$type), $name);
+    } @else {
+      @warn 'There is not elements "#{$name}" in the z map available.';
+    }
+  } @else {
+     @warn 'The desired Type "#{$type}" is not available. Please add it to the Map or use a other one'
+  }
+}

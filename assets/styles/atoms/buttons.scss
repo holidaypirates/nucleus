@@ -1,0 +1,54 @@
+// button.scss -- Button styles
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * Generic button styles for a subtile button on light background and a more present button
+ * for darker / colorful backgrounds.
+ *
+ * @atom Button
+ * @markup
+ *  <button class="SG-button">.SG-button</button>
+ *  <button class="SG-button SG-button--large">.SG-button</button>
+ *  <div style="padding: 5px; background: #f15f79; margin: 1em -5px;">
+ *    <button class="SG-button SG-button--white">.SG-button</button>
+ *    <button class="SG-button SG-button--white SG-button--large">.SG-button</button>
+ *  </div>
+ */
+.SG-button {
+  color: $color--gray;
+  background: none;
+  border: 1px solid $color--light-gray;
+  border-radius: 5px;
+  padding: 10px 14px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $color--accent;
+    color: $color--accent;
+  }
+
+  // Larger button
+  &.SG-button--large {
+    font-size: 16px;
+    padding: 16px 36px;
+  }
+
+  // White button style
+  &.SG-button--white {
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background: white;
+      color: $color--accent;
+    }
+  }
+}

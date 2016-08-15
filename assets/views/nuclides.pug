@@ -1,0 +1,49 @@
+//-
+ * nuclides.pug -- Compose the nuclides page
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+extends ./common/layout.pug
+
+include ./common/sections.pug
+include ./common/toc.pug
+
+block nav
+  -var selected = 'Nuclides';
+
+block title
+  | Nuclides
+
+block content
+  .SG-row
+    .SG-gr-12
+      .SG-h1 Nuclides
+
+  .SG-row
+    .SG-gr-6
+      .SG-h3 Table of content
+    .SG-gr-6
+      .SG-h3 What are Nuclides?
+
+  .SG-row
+    .SG-gr-6.SG-toc
+      +toc(styles.Nuclides)
+    .SG-gr-6
+      p.SG-p.
+        Nuclides are parts of the stylesheet source that are not directly useable on their own. This could be mixins, variables like colors and sizes, or settings.
+      p.SG-p.
+        To mark a variable or mixin as a nuclide, annotate it with the <span class="SG-strong">@nuclide</span> tag, followed by the name of the nuclide.
+      p.SG-p.
+        Special forms are <span class="SG-strong">@color</span> and <span class="SG-strong">@mixin</span>.
+        Read more about nuclides in the <a class="SG-a" href="help.html#nuclides">annotation reference</a>.
+
+  if meta.demo
+    include ./common/demo.pug
+
+  if styles.Nuclides
+    +section-second-level(styles.Nuclides)

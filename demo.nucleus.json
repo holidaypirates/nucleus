@@ -1,0 +1,13 @@
+{
+  "title":  "Nucleus Demo",
+  "files":  [
+    "assets/styles/**/*.scss",
+    "assets/styles/nuclides/icons.css",
+    "docs/src/styles/nuclides/icons.css",
+    "docs/src/styles/**/*.scss"
+  ],
+  "css": "../styles/app.css",
+  "target"  : "docs/build/demo",
+  "namespace": null,
+  "demo": true
+}

@@ -1,0 +1,44 @@
+/** @color Primary Action */
+$color--primary: green;
+
+/**
+ * Abort Action
+ *
+ * @color
+ */
+$color--primary: red;
+
+/**
+ * This is the description for the test component,
+ * which has a line break.
+ *
+ * @atom
+ * @section Button
+ * @name Standard Button
+ *
+ * @markup
+ *   <button class="button">Caption</button>
+ */
+
+.button {
+  border: 1px solid blue;
+
+  &.button--primary {
+    background-color: $color--primary;
+  }
+
+  &.button--cancel {
+    background-color: $color--abort;
+  }
+}
+
+/**
+ * Manages the z-index of elements, taking the values from a pre-configured list.
+ *
+ * @mixin
+ * @param $position The named position
+ * @param $scope The scope of the element. Each scope organizes the elements anew, starting from the lowest z-index. Default value is „default“
+ */
+@mixin z($position, $scope) {
+
+}

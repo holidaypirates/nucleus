@@ -1,0 +1,89 @@
+// icons.lodash.css -- Template for the automatically generated icon stack
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+@font-face {
+  font-family: "SG-icons";
+  src: url('../fonts/SG-icons.eot');
+  src: url('../fonts/SG-icons.eot?#iefix') format('eot'),
+    url('../fonts/SG-icons.woff') format('woff'),
+    url('../fonts/SG-icons.ttf') format('truetype'),
+    url('../fonts/SG-icons.svg#SG-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.SG-ico:before {
+  display: inline-block;
+  font-family: "SG-icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.SG-ico-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.SG-ico-2x { font-size: 2em; }
+.SG-ico-3x { font-size: 3em; }
+.SG-ico-4x { font-size: 4em; }
+.SG-ico-5x { font-size: 5em; }
+.SG-ico-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+
+/**
+ * @icon .SG-ico--logo
+ * @markup
+ *  <i class="SG-ico SG-ico--logo"></i>
+ */
+  .SG-ico--logo:before {
+    content: "\EA01"
+  }
+
+/**
+ * @icon .SG-ico--code
+ * @markup
+ *  <i class="SG-ico SG-ico--code"></i>
+ */
+  .SG-ico--code:before {
+    content: "\EA02"
+  }
+
+/**
+ * @icon .SG-ico--question
+ * @markup
+ *  <i class="SG-ico SG-ico--question"></i>
+ */
+  .SG-ico--question:before {
+    content: "\EA03"
+  }
+
+/**
+ * @icon .SG-ico--copy
+ * @markup
+ *  <i class="SG-ico SG-ico--copy"></i>
+ */
+  .SG-ico--copy:before {
+    content: "\EA04"
+  }
+
+/**
+ * @icon .SG-ico--seach
+ * @markup
+ *  <i class="SG-ico SG-ico--seach"></i>
+ */
+  .SG-ico--seach:before {
+    content: "\EA05"
+  }

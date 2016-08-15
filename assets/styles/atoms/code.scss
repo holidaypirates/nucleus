@@ -1,0 +1,78 @@
+// code.scss -- Code / monospaced font blocks
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+.SG-component {
+  @import "prismjs/themes/prism-okaidia";
+}
+
+/**
+ * Displays example code for style components with monospaced font.
+ *
+ * @atom Generic Code block
+ * @section Typography
+ * @markup
+ *  <div class="SG-code">Code</div>
+ */
+.SG-code {
+  background: $color--dark-gray;
+  color: white;
+  font-family: monospace;
+  padding: 20px;
+  white-space: pre;
+  max-height: 100%;
+  margin-bottom: 1em;
+  overflow-x: auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 0 1px $color--blackish;
+
+  &.SG-code--hidden {
+    display: none;
+  }
+}
+
+/**
+ * Displays example code for style guide related code annotation examples
+ *
+ * @atom Nucleus Code block
+ * @section Typography
+ * @markup
+ *  <div class="SG-code-nucleus">Example</div>
+ */
+.SG-code-nucleus {
+  @include monospace();
+
+  background-color: #f9f9f9;
+  display: block;
+  white-space: pre;
+  color: $color--dark-gray;
+  padding: 15px;
+  margin: 2em 0;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+  overflow-y: auto;
+  box-shadow: 0 2px 0 1px #e8e8e8;
+
+  &.language-nucleus {
+    color: $color--light-gray;
+
+    .token.docblock {
+      color: $color--gray;
+    }
+
+    .token.annotation {
+      color: $color--pink;
+    }
+
+    .token.value {
+      color: red;
+    }
+  }
+}
+

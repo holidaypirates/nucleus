@@ -1,0 +1,94 @@
+extends layouts/doc-page
+
+block title
+  | Configuration
+
+block content
+  h1.SG-h1 Configuration
+
+  h2.SG-h2 Configuration file
+  p.SG-p.
+    By default, Nucleus will look for a config.nucleus.json in the current directory. If none is given, default parameters will be used. Also, command line arguments have a greater priority than configuration values.
+  p.SG-p.
+    To easily get your style guide set up, use the step-by-step configuration generator:
+  code.
+    nucleus init
+
+  h2.SG-h2 Available options
+
+  h3.SG-h3 Config file
+  p.SG-p The configuration file that shall be used.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --config
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value config.nucleus.json
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --config styleguide-config.json
+
+  h3.SG-h3 Title
+  p.SG-p Lets you overwrite the title of the style guide.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --title
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value title
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value Nucleus
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --title StyleBook
+
+  h3.SG-h3 Target
+  p.SG-p Target folder to build the style guide to.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --target
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value target
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value ./styleguide
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --target ./public/styleguide
+
+  h3.SG-h3 CSS includes
+  p.SG-p To preview the components, you need to specify the path (URI) to your CSS file.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --css
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value css
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value none
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --css /assets/app.css
+
+  h3.SG-h3 Static dummy texts and images
+  p.SG-p For easier visual regression testing, you may disable the generation of randomized lipsum texts and image placeholders. With this option enabled, you will always get the same (boring) placeholders.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --norandom
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value staticLipsum
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value false
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --norandom

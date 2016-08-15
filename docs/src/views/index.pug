@@ -1,0 +1,61 @@
+extends layouts/landing-page
+
+block title
+  | Living style guide generator
+
+block header
+  div.hero
+    include common/header
+    div.SG-layout
+      h1 Powerfull management for crafted styles
+        small A living style guide generator that will boost your efficiency
+      div.window
+        div.split-pane
+          div.split-pane__preview
+            div.split-pane__handle
+          div.split-pane__code.language-scss.code(data-d-code-preview).
+            /* Lost track of all your colors? */
+
+            /** @color Accent */
+            $color--accent: #a0518e;
+
+            /** @color Light Gray */
+            $color--light-gray: #d8d8d8;
+
+            /** @color Dark Gray */
+            $color--dark-gray: #4a4a4a;
+
+            /** @color Gray */
+            $color--gray: #9b9b9b;
+
+            /** @color Hint accent color */
+            $color--hint: #f9bf3b;
+      nav
+        a.SG-button.SG-button--white.SG-button--large(href='demo/index.html', target="_blank") Demo
+        a.SG-button.SG-button--white.SG-button--large(href="getting-started.html") Get started
+
+
+block content
+  ul.feature-list
+    a.feature(href="getting-started.html")
+      i.ico.ico--tools
+      span.feature__description Fits well in new and mature projects
+      span.SG-button Getting started
+    a.feature(href="configuration.html")
+      i.ico.ico--rescue
+      span.feature__description Ready for visual testing and CI
+      span.SG-button Configuration
+    a.feature(href="annotation-reference.html")
+      i.ico.ico--molecule
+      span.feature__description Encourages to write modular styles
+      span.SG-button Annotation reference
+    a.feature(href="demo/index.html", target="_blank")
+      i.ico.ico--search
+      span.feature__description Quickly search through components
+      span.SG-button Try a demo
+
+  div.sponsors
+    a.sponsors__sponsor.sponsors--hp(href="//www.holidaypirates.com/", target="_blank")
+    a.sponsors__sponsor.sponsors--pt(href="//www.piratetech.rs/", target="_blank")
+
+  footer.footer &nbsp;

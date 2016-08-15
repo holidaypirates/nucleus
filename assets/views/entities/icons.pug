@@ -1,0 +1,32 @@
+//-
+ * icon.pug -- Render icon atom component
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+mixin icon(icon)
+  div.SG-icon-preview
+    div.SG-row
+      div.SG-gr-12
+        a.SG-anchor(name=icon.hash)
+        div.SG-icon-preview__name #{icon.name}
+          if (icon.deprecated)
+            span.SG-pill deprecated
+
+    div.SG-row
+      div.SG-gr-11
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+        div.SG-icon-preview__icon !{icon.markup}
+      div.SG-gr-1.SG-txt-right
+        div.SG-button.SG-icon-preview__copy(data-d-copy, data-clipboard-text=icon.markup)
+          i.SG-ico.SG-ico--copy

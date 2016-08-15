@@ -1,0 +1,262 @@
+extends layouts/doc-page
+
+block title
+  | Substitutions &amp; Flags
+
+block content
+  h1.SG-h1 Substitutions &amp; Flags
+  p.SG-p.
+    For special features of the styleguide, a set of @flags and @{substitutions} is available to use on certain elements.
+
+  h2.SG-h2 Substitutions
+
+  p.SG-p.
+    Substitutions help you to compose and fill your markup blueprints. Therefore, Nucleus offers placeholder functions for texts and images to be used inside the markup of elements.
+
+  p.SG-p.
+    Furthermore, to avoid repeating markup all over the annotations again, you may include the markup of another element with @{include:.selector}.
+
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Substitution
+      div.SG-config__value @{include:selector}
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Include the markup from another element
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value @{include:.header}
+
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Substitution
+      div.SG-config__value @{lipsum:quantity:type}
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Include a placeholder text. Type could be paragraphs, sentence or words.
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value @{lipsum:3:paragraphs}
+
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Substitution
+      div.SG-config__value @{image:width:height}
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Include a placeholder image from <a class="SG-a" href="https://unsplash.com/" target="_blank">Unsplash</a>
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value @{image:400:300}
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     * A navigation element for the menu bar.
+     *
+     * @atom Menu Item
+     * @markup
+     *  &lt;a class="menu-item"&gt;@{lipsum:2:words}&lt;/a&gt;
+     */
+    .menu-item { /* ... */ }
+
+    /**
+     * A menu bar which spans across full page width.
+     *
+     * @molecule Menu Bar
+     * @flag full-width
+     * @markup
+     *   &lt;nav class="menu"&gt;
+     *     @{include:.menu-item}
+     *     @{include:.menu-item}
+     *     @{include:.menu-item}
+     *   &lt;/nav&gt;
+     */
+    .menu { /* ... */ }
+
+
+  h2.SG-h2 Flags
+  p.SG-p.
+    Flags are used to enable certain features related to Nucleus - mostly related to the visual output or processing.
+  p.SG-p.
+    For example, if you like an element to spread over the full width of a page instead of being bound inside the main content container, annotate it with @flag full-width.
+
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Flag
+      div.SG-config__value @flag full-width
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Extends the element preview to full body width
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     * Header bar with logo, navigation, and tool icons at the top of the page.
+     * Note: This is just a minified example.
+     *
+     * @structure Header
+     * @flag full-width
+     * @markup
+     *  ...
+     */
+    .SG-header { /* ... */ }
+
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Flag
+      div.SG-config__value @deprecated
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Marks the element as deprecated
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     * Previous button color
+     *
+     * @color
+     * @deprecated
+     */
+    $color--button: #FFCC66;
+
+  //- p.SG-p.
+  //-   Nuclides are parts of the stylesheet source that are not directly useable on their own. This could be mixins, variables like colors and sizes, or settings.
+  //- p.SG-p.
+  //-   To mark a variable or mixin as a nuclide, annotate it with the @nuclide tag, followed by the name of the nuclide. For basic nuclides, only @description and @section are valid annotations.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * The relative path to the image assets folder.
+  //-    *
+  //-    * @nuclide Image-Folder
+  //-    * @section Config &gt; Paths
+  //-    */
+  //-   $config--image-folder: "../images";
+  //- p.SG-p.
+  //-   Special nuclides are @color and @mixin.
+
+  //- h2.SG-h2 Colors
+  //- p.SG-p.
+  //-   A @color often does not need any more information, that's why you may also write it as a one-line annotation.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * A red color variable.
+  //-    *
+  //-    * @color
+  //-    * @section Message Colors
+  //-    */
+  //-   $color--red: #F00;
+
+  //-   /** @color Solid black */
+  //-   $color: #000;
+  //- p.SG-p.
+  //-   For @mixin, the @markup annotation does not make much sense, so it becomes @example. Also, you should describe the parameters (and what they are meant for) with @param. Nucleus should automatically recognize if a mixin parameter is optional or not.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * Put rounded borders around the element
+  //-    * and a border color.
+  //-    *
+  //-    * @section Style Mixins
+  //-    * @param $radius This could be single line ...
+  //-    * @param $color
+  //-    *   Or multi-line, you decide!
+  //-    * @example
+  //-    *   @include brc(3px);
+  //-    *   @include brc(3px, $color--red);
+  //-    */
+  //-   @mixin brc($radius, $color = '#333') {
+  //-     /* ... */
+  //-   }
+
+  //- h2.SG-h2 Atoms
+  //- p.SG-p.
+  //-   Atoms are the very basic elements of the stylesheet. Imagine every single-class element or selector rules as an atom. Examples are buttons, links, headlines, inputs ... you get it, right?
+  //- p.SG-p.
+  //-   To mark a variable or mixin as an atom, annotate it with the @atom tag, followed by the name of the component.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * @atom Button
+  //-    * @section Navigation &gt; Buttons
+  //-    * @markup
+  //-    *   &lt;button class="button"&gt;
+  //-    *     A button
+  //-    *   &lt;/button&gt;
+  //-    *   &lt;button class="button button--alert"&gt;
+  //-    *     An alert button
+  //-    *   &lt;/button&gt;
+  //-    */
+  //-   .button {
+  //-    /* ... */
+  //-    &amp;.button--alert { /* ... */ }
+  //-   }
+
+  //- h2.SG-h2 Icons
+  //- p.SG-p.
+  //-   Special atoms are @icons, and meant are glyphs of an icon font.
+  //- p.SG-p.hint.
+  //-   If you are using an automated process to generate the icon font, include the annotations directly into the source code template for the resulting stylesheet file. This way, the icons will automatically appear in the style guide.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * @icon .SG-ico--logo
+  //-    * @markup
+  //-    *  &lt;i class="SG-ico SG-ico--logo"&gt;&lt;/i&gt;
+  //-    */
+  //-   .SG-ico--logo:before {
+  //-     content: "\EA01"
+  //-   }
+
+  //- h2.SG-h2 Molecules
+  //- p.SG-p.
+  //-   Molecules consist of one or more nested rules, but each of them is not more than an atom. For example, using icons or buttons in molecules is valid, but using other molecules is not.
+  //- p.SG-p.
+  //-   To mark an element as molecule, annotate it with the @molecule tag, followed by the name of the component.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * Buttons with icons and text or icons only.
+  //-    *
+  //-    * @molecule Icon Buttons
+  //-    * @markup
+  //-    *  &lt;div class="SG-button"&gt;
+  //-    *    &lt;i class="SG-ico SG-ico--question"&gt;&lt;/i&gt;
+  //-    *  &lt;/div&gt;
+  //-    *  &lt;div class="SG-button SG-button--ico"&gt;
+  //-    *    &lt;i class="SG-ico SG-ico--question"&gt;&lt;/i&gt;
+  //-    *    With text
+  //-    *  &lt;/div&gt;
+  //-    */
+  //-   .SG-button {
+  //-     .SG-ico {
+  //-       /* ... */
+  //-     }
+
+  //-     &amp;.SG-button--ico .SG-ico {
+  //-       /* ... */
+  //-     }
+  //-   }
+
+  //- h2.SG-h2 Structures
+  //- p.SG-p.
+  //-   Structures are the most complex types. They may even consist of multiple molecules or other structures again.
+  //- code.code.language-nucleus(data-d-code-preview).
+  //-   /**
+  //-    * Header bar with logo, navigation, and tool icons at the top of the page.
+  //-    * Note: This is just a minified example.
+  //-    *
+  //-    * @structure Header
+  //-    * @markup
+  //-    *  &lt;div class="SG-header"&gt;
+  //-    *    &lt;div class="SG-logo"&gt;
+  //-    *      &lt;div class="SG-ico SG-ico--logo SG-ico-lg"&gt;&lt;/div&gt;
+  //-    *      &lt;div class="SG-logo__name"&gt;Nucleus&lt;/div&gt;
+  //-    *    &lt;/div&gt;
+  //-    *    &lt;ul class="SG-nav"&gt;
+  //-    *      &lt;li&gt;
+  //-    *        &lt;a href="nuclides.html" class="SG-nav__item"&gt;Nuclides&lt;/a&gt;
+  //-    *      &lt;/li&gt;
+  //-    *      &lt;li&gt;
+  //-    *        &lt;a href="atoms.html" class="SG-nav__item"&gt;Atoms&lt;/a&gt;
+  //-    *      &lt;/li&gt;
+  //-    *    &lt;/ul&gt;
+  //-    *    &lt;ul class="SG-nav-icons"&gt;
+  //-    *      &lt;!-- ... --&gt;
+  //-    *    &lt;/ul&gt;
+  //-    *  &lt;/div&gt;
+  //-    */
+  //-   .SG-header { /* ... */ }

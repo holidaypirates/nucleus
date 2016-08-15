@@ -1,0 +1,32 @@
+//-
+ * nuclides.pug -- Render a generic nuclide component
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+mixin nuclide(nuclide)
+  div.SG-component
+    div.SG-row
+      div.SG-gr-8
+        div.SG-component__title #{nuclide.name}
+          if (nuclide.deprecated)
+            span.SG-pill deprecated
+      div.SG-4.SG-txt-right
+        div.SG-button.SG-button--ico(data-d-copy, data-clipboard-text=nuclide.name)
+            span.SG-ico.SG-ico--copy
+            | Copy variable
+
+    div.SG-row
+      div.SG-gr-12
+        div.SG-p.SG-component__preview--description #{nuclide.description}
+
+    div.SG-row
+      div.SG-gr-12.SG-component__preview
+        div.SG-config
+          div.SG-config__row
+            div.SG-config__label Value
+            div.SG-config__value #{nuclide.value}

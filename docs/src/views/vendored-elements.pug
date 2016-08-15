@@ -1,0 +1,27 @@
+extends layouts/doc-page
+
+block title
+  | Vendored elements
+
+block content
+  h1.SG-h1 Vendored elements
+  p.SG-p.
+    Let's say you are including styles that are coming from a third party and do not contain any DocBlock annotations. Still, you want to see these elements in the style guide too.
+  p.SG-p.
+    The solution for this is quite straigt-forward. Create empty dummy elements
+    that match the vendored elements and put the annotations there. Since
+    Nucleus is working with the SCSS source files, it is not important
+    if a selector contains style declarations or not. In the end, after
+    transpiling SCSS to CSS, the empty selector will not be in the CSS file.
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     * I'm defining the style information for a
+     * vendored selector.
+     *
+     * @atom Bootstrap button
+     * @section Bootstrap
+     * @markup
+     *    &lt;button class="btn"&gt;a button&lt;/button&gt;
+     */
+    .btn { /* leave empty */ }

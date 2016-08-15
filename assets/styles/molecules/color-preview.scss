@@ -1,0 +1,43 @@
+// color-preview.scss -- Color preview for rendered style guide
+//
+// Copyright (C) 2016 Michael Seibt
+//
+// With contributions from: -
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+
+/**
+ * A circular and textual preview for colors. For the circle, an inline style
+ * for the background and border colors has to be set, whereas an inline style
+ * for the color of the typographic preview is required.
+ *
+ * @molecule Color Preview
+ * @section Previews
+ * @markup
+ *  <div class="SG-color-preview">
+ *    <div class="SG-color-preview__circle" style="background-color: #999; border-color: #888;"></div>
+ *    <div class="SG-color-preview__typo" style="color: #999">Aa</div>
+ *  </div>
+ */
+.SG-color-preview {
+  .SG-color-preview__circle {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: attr(data-color);
+    border-style: solid;
+    border-width: 1px;
+    vertical-align: middle;
+    margin-right: 30px;
+  }
+
+  .SG-color-preview__typo {
+    @include lato(700);
+
+    display: inline-block;
+    font-size: 42px;
+    vertical-align: middle;
+  }
+}

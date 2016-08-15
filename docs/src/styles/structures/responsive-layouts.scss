@@ -1,0 +1,9 @@
+.SG-layout--two-columns {
+
+  @include mq($until: tablet) {
+    .SG-layout__sidebar, .SG-layout__content {
+      float: none;
+      width: 100%;
+    }
+  }
+}

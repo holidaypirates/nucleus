@@ -1,0 +1,57 @@
+/**
+ * List entry for the feature list on the landing page, consisting of an icon,
+ * a brief description and a link to the corresponding documentation page.
+ *
+ * @molecule Feature
+ * @section Landing-Page
+ * @markup
+ *  <a class="feature" href="#">
+ *    <i class="ico ico--tools"></i>
+ *    <span class="feature__description">
+ *      Fits well in new and mature projects
+ *    </span>
+ *    <span class="SG-button">Getting started</a>
+ *  </a>
+ */
+.feature {
+  padding: 40px 10px;
+  text-align: center;
+  height: 330px;
+  position: relative;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+
+  // Pink box with white text
+  &:hover {
+    background-color: $color--pink;
+    .ico::before, .feature__description {
+      color: white;
+    }
+    .SG-button {
+      color: white;
+      border-color: white;
+    }
+  }
+
+  .SG-button {
+    position: absolute;
+    bottom: 20px;
+    width: 86%;
+    left: 7%;
+  }
+
+  .ico {
+    display: block;
+    font-size: 70px;
+    color: $color--pink;
+  }
+
+  .feature__description {
+    @include lato(600);
+    color: $color--dark-gray;
+    font-size: 21px;
+    display: block;
+    margin: 1.5em 0 2em 0;
+  }
+}
