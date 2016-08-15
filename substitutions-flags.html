@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><title>Substitutions &amp; Flags- Nucleus - Living style guide generator</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"><link href="styles/app.css" rel="stylesheet"><link rel="icon" href="favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></head><body><header class="SG-header"><a class="SG-logo" href="index.html"><span class="SG-logo__icon ico ico--logo"></span><span class="SG-logo__name">Nucleus</span></a><ul class="SG-nav"><li><a class="SG-nav__item SG-nav__item--active" href="getting-started.html">Documentation</a></li><li><a class="SG-nav__item" href="demo/index.html">Demo</a></li></ul><ul class="SG-nav-icons"><li><a class="SG-nav-icons__item" href="https://github.com/holidaypirates/nucleus" title="View on GitHub" target="_blank"><i class="ico ico--github"></i></a></li></ul></header><div class="SG-layout SG-layout--two-columns"><div class="SG-layout__sidebar"><nav class="menu SG-toc"><ul role="menu"><li class="SG-toc__category">Setup</li><li><a class="SG-a" href="installation.html">Installation</a></li><li><a class="SG-a" href="configuration.html">Configuration</a></li><li class="SG-toc__category">How to use</li><li><a class="SG-a" href="getting-started.html">Getting Started</a></li><li><a class="SG-a" href="annotation-reference.html">Annotation reference</a></li><li><a class="SG-a" href="substitutions-flags.html">Substitutions &amp; Flags</a></li><li><a class="SG-a" href="vendored-elements.html">Vendored elements</a></li><li class="SG-toc__category">Meta</li><li><a class="SG-a" href="https://github.com/holidaypirates/nucleus" target="_blank">View on GitHub</a></li><li><a class="SG-a" href="https://github.com/holidaypirates/nucleus/blob/master/CONTRIBUTORS.md" target="_blank">Contributing</a></li></ul></nav></div><div class="SG-layout__content"><h1 class="SG-h1">Substitutions &amp; Flags</h1><p class="SG-p">For special features of the styleguide, a set of @flags and @{substitutions} is available to use on certain elements.
+</p><h2 class="SG-h2">Substitutions</h2><p class="SG-p">Substitutions help you to compose and fill your markup blueprints. Therefore, Nucleus offers placeholder functions for texts and images to be used inside the markup of elements.
+</p><p class="SG-p">Furthermore, to avoid repeating markup all over the annotations again, you may include the markup of another element with @{include:.selector}.
+</p><div class="SG-config"><div class="SG-config__row"><div class="SG-config__label">Substitution</div><div class="SG-config__value">@{include:selector}</div></div><div class="SG-config__row"><div class="SG-config__label">Description</div><div class="SG-config__value">Include the markup from another element</div></div><div class="SG-config__row"><div class="SG-config__label">Example</div><div class="SG-config__value">@{include:.header}</div></div></div><div class="SG-config"><div class="SG-config__row"><div class="SG-config__label">Substitution</div><div class="SG-config__value">@{lipsum:quantity:type}</div></div><div class="SG-config__row"><div class="SG-config__label">Description</div><div class="SG-config__value">Include a placeholder text. Type could be paragraphs, sentence or words.</div></div><div class="SG-config__row"><div class="SG-config__label">Example</div><div class="SG-config__value">@{lipsum:3:paragraphs}</div></div></div><div class="SG-config"><div class="SG-config__row"><div class="SG-config__label">Substitution</div><div class="SG-config__value">@{image:width:height}</div></div><div class="SG-config__row"><div class="SG-config__label">Description</div><div class="SG-config__value">Include a placeholder image from <a class="SG-a" href="https://unsplash.com/" target="_blank">Unsplash</a></div></div><div class="SG-config__row"><div class="SG-config__label">Example</div><div class="SG-config__value">@{image:400:300}</div></div></div><code class="code language-nucleus" data-d-code-preview>/**
+ * A navigation element for the menu bar.
+ *
+ * @atom Menu Item
+ * @markup
+ *  &lt;a class="menu-item"&gt;@{lipsum:2:words}&lt;/a&gt;
+ */
+.menu-item { /* ... */ }
+
+/**
+ * A menu bar which spans across full page width.
+ *
+ * @molecule Menu Bar
+ * @flag full-width
+ * @markup
+ *   &lt;nav class="menu"&gt;
+ *     @{include:.menu-item}
+ *     @{include:.menu-item}
+ *     @{include:.menu-item}
+ *   &lt;/nav&gt;
+ */
+.menu { /* ... */ }
+
+</code><h2 class="SG-h2">Flags</h2><p class="SG-p">Flags are used to enable certain features related to Nucleus - mostly related to the visual output or processing.</p><p class="SG-p">For example, if you like an element to spread over the full width of a page instead of being bound inside the main content container, annotate it with @flag full-width.
+</p><div class="SG-config"><div class="SG-config__row"><div class="SG-config__label">Flag</div><div class="SG-config__value">@flag full-width</div></div><div class="SG-config__row"><div class="SG-config__label">Description</div><div class="SG-config__value">Extends the element preview to full body width</div></div></div><code class="code language-nucleus" data-d-code-preview>/**
+ * Header bar with logo, navigation, and tool icons at the top of the page.
+ * Note: This is just a minified example.
+ *
+ * @structure Header
+ * @flag full-width
+ * @markup
+ *  ...
+ */
+.SG-header { /* ... */ }
+</code><div class="SG-config"><div class="SG-config__row"><div class="SG-config__label">Flag</div><div class="SG-config__value">@deprecated</div></div><div class="SG-config__row"><div class="SG-config__label">Description</div><div class="SG-config__value">Marks the element as deprecated</div></div></div><code class="code language-nucleus" data-d-code-preview>/**
+ * Previous button color
+ *
+ * @color
+ * @deprecated
+ */
+$color--button: #FFCC66;
+</code></div></div><script src="scripts/app.js"></script></body></html>
