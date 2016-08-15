@@ -1,6 +1,6 @@
 # Nucleus Style Guide
 
-Powerfull management for crafted styles.
+Powerful management for crafted styles.
 
 [Home Page](https://holidaypirates.github.com/nucleus/index.html) &nbsp; &bull;
 [Demo](https://holidaypirates.github.com/nucleus/demo/index.html) &nbsp; &bull; &nbsp; [Getting Started](https://holidaypirates.github.com/nucleus/getting-started.html) &nbsp; &bull; &nbsp; [Documentation](https://holidaypirates.github.com/nucleus/annotation-reference.html)
