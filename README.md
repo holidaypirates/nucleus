@@ -7,6 +7,8 @@ Powerful management for crafted styles.
 
 Nucleus is a living style guide generator for atomic css based components. It's a Node application parsing the source SCSS files and reading information from DocBlock annotations.
 
+![Nucleus Preview](https://holidaypirates.github.io/nucleus/images/split-preview.png)
+
 ## Quick start
 
 A more detailed installation instruction can be found [here](https://holidaypirates.github.com/nucleus/installation.html).
