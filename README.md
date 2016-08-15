@@ -32,7 +32,7 @@ Open ```http://YOUR_LOCAL_DEV_URL/styleguide``` .
 
 ## Contributing
 
-If you found a bug, please try to submit a pull request with a failing test. For new issues, please take note of the [Contribution guidelines](https://github.com/holidaypirates/nucleus/blob/master/CONTRIBUTORS.md). Especially bug reports should at least contain [required information](https://github.com/holidaypirates/nucleus/blob/master/CONTRIBUTORS.md).
+If you found a bug, please try to submit a pull request with a failing test. For new issues, please take note of the [Contribution guidelines](https://github.com/holidaypirates/nucleus/blob/master/CONTRIBUTING.md). Especially bug reports should at least contain [required information](https://github.com/holidaypirates/nucleus/blob/master/CONTRIBUTING.md).
 
 Nucleus was developed by pirates from HolidayPirates and PirateTechnologies.
 
