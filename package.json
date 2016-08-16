@@ -15,7 +15,7 @@
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover _mocha",
     "build": "./node_modules/.bin/gulp build --production",
-    "build_docs": "./node_modules/.bin/gulp dist --gulpfile docs/gulpfile.js"
+    "build_docs": "./node_modules/.bin/gulp dist --gulpfile docs/gulpfile.js --production"
   },
   "bin": {
     "nucleus": "./bin.js"
