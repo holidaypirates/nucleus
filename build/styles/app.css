@@ -2716,6 +2716,7 @@ body {
   font-family: Lato, sans-serif;
   font-size: 14px;
   margin: 0;
+  position: relative;
   padding: 0;
   border-bottom: 1px solid #efefef;
   padding: 0 40px;

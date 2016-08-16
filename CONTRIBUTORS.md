@@ -1,8 +1,9 @@
-# Contributers
+# Contributors
 
 Sorted alphabeticaly by first name. [Full list of contributers](https://github.com/holidaypirates/nucleus/graphs/contributors)
 
 Michael Seibt ([GitHub](https://github.com/michaelseibt) &bull; [Twitter](https://twitter.com/divis0r))
+Thomas Carlson ([Github](https://github.com/thomas0c) &bull; [Twitter](https://twitter.com/thomasoc))
 
 # Special thanks to
 
