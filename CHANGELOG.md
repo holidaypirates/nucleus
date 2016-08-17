@@ -8,6 +8,22 @@
 
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.0.4                                                   17.08.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Thanks for all the positiv feedback and ideas how we could improve this project.
+This version includes various small fixes, but mainly:
+
+Bugfixes
+--------
+
+* Fix header reflection being positioned absolutely instead of relatively (#1)
+
+* Fix init script not working
+
+* Documentation fixes and typos
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ VERSION 1.0.0                                                   15.08.2016 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 

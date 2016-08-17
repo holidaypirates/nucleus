@@ -114,4 +114,11 @@ Config.getFromArguments = function () {
   return cliConfig;
 };
 
+Config.shouldRunInit = function () {
+  if(argv._ && argv._.length) {
+    return argv._[0] == 'init';
+  }
+  return false;
+};
+
 module.exports = Config;

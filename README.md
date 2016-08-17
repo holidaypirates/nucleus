@@ -2,8 +2,10 @@
 
 Powerful management for crafted styles.
 
-[Home Page](https://holidaypirates.github.com/nucleus/index.html) &nbsp; &bull;
-[Demo](https://holidaypirates.github.com/nucleus/demo/index.html) &nbsp; &bull; &nbsp; [Getting Started](https://holidaypirates.github.com/nucleus/getting-started.html) &nbsp; &bull; &nbsp; [Documentation](https://holidaypirates.github.com/nucleus/annotation-reference.html)
+[Home Page](https://holidaypirates.github.com/nucleus/index.html) &nbsp; &bull; &nbsp;
+[Demo](https://holidaypirates.github.com/nucleus/demo/index.html) &nbsp; &bull; &nbsp;
+[Getting Started](https://holidaypirates.github.com/nucleus/getting-started.html) &nbsp; &bull; &nbsp;
+[Documentation](https://holidaypirates.github.com/nucleus/annotation-reference.html)
 
 Nucleus is a living style guide generator for atomic css based components. It's a Node application parsing the source SCSS files and reading information from DocBlock annotations.
 

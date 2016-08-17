@@ -31,6 +31,12 @@ var jade = require('pug');
 |
 */
 
+// If requested, run the init script and stop the execution here
+if(Config.shouldRunInit()) {
+  require('./init');
+  process.exit(0);
+}
+
 var config = Config.parse();
 Verbose.setLevel(config.verbose);
 Verbose.start();
