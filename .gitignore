@@ -2,3 +2,4 @@ node_modules
 coverage
 docs/build
 styleguide
+npm-debug.log
