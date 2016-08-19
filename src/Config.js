@@ -12,6 +12,7 @@
 
 'use strict';
 
+var fs = require('fs');
 var merge = require('merge');
 var argv = require('yargs')
             .alias('c', 'config')
@@ -34,6 +35,8 @@ var Config = {};
  */
 Config.parse = function () {
   var defaultConfig = require('../default.nucleus.json');
+  defaultConfig.template = __dirname + '/../assets/views';
+
   var config = defaultConfig;
 
   // Are we allowed to talk at all?
@@ -85,6 +88,14 @@ Config.parse = function () {
     Verbose.error('no_target');
   }
 
+  // No valid template folder, no styleguide !
+  try {
+    fs.accessSync(config.template, fs.F_OK);
+  } catch (e) {
+    config.template = __dirname + '/../assets/views';
+    Verbose.error('no_valid_template');
+  }
+
   config.files = files;
   return config;
 };
@@ -110,6 +121,7 @@ Config.getFromArguments = function () {
   if(argv.verbose) cliConfig.verbose = argv.verbose;
   if(argv.target)  cliConfig.target = argv.target;
   if(argv.title)   cliConfig.title = argv.title;
+  if(argv.template)  cliConfig.template = argv.template;
   if(argv.norandom)  cliConfig.staticLipsum = !!argv.norandom;
   return cliConfig;
 };

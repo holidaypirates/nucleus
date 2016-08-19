@@ -77,6 +77,22 @@ block content
       div.SG-config__label Example
       div.SG-config__value nucleus --css /assets/app.css
 
+  h3.SG-h3 Template
+  p.SG-p If you want customize the generated layout you can copy the [default theme](https://github.com/holidaypirates/nucleus/tree/master/assets/views) and customize it.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --template
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value template
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value undefined
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --template=./styleguide/my-theme
+
   h3.SG-h3 Static dummy texts and images
   p.SG-p For easier visual regression testing, you may disable the generation of randomized lipsum texts and image placeholders. With this option enabled, you will always get the same (boring) placeholders.
   div.SG-config

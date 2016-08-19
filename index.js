@@ -93,7 +93,7 @@ require('mkdirp').sync(config.target);
 var templateFiles = ['atoms', 'molecules', 'index', 'nuclides', 'structures'];
 for(var t in templateFiles) {
   Verbose.spin('Generating files');
-  var html = jade.renderFile(__dirname + '/assets/views/'+templateFiles[t]+'.pug', {
+  var html = jade.renderFile(config.template.replace(/\/$/, '')+'/'+templateFiles[t]+'.pug', {
     styles : styleguides,
     index: searchIndex,
     meta: {

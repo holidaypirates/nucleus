@@ -72,5 +72,14 @@ module.exports = {
         'At least, you could add an empty rule.'
     };
   },
+  'no_valid_template': function() {
+    return {
+      'title': 'Template folder is not valid.',
+      'text': 'Double-check the ' + chalk.underline('template') + ' property in the configuration. ' +
+        'This should be a valid folder with template files to generate a valid styleguide.' +
+        'Default template is used. ' +
+        'Btw, the current working dir is ' + process.cwd()
+    };
+  },
 
 };
