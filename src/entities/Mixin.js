@@ -50,8 +50,14 @@ Mixin.prototype = Object.create(Entity.prototype);
  */
 Mixin.prototype.getParameters = function() {
   var parameters = [];
-  var paramString = this.raw.descriptor.match(/\((.*)\)/)[1];
+  var paramString = this.raw.descriptor.match(/\((.*)\)/);
   var docParameters = this.raw.annotations.param;
+
+  // If there're no parameters in the descriptor definition,
+  // we don't need to take a closer look
+  if(!paramString) {
+    return [];
+  }
 
   // If there's only one parameter, make it an array
   if(typeof docParameters === 'string') {
@@ -61,7 +67,7 @@ Mixin.prototype.getParameters = function() {
   for(var p in docParameters) {
     var param = this.getParameter(docParameters[p]);
     var paramCodeRE = new RegExp("(\\"+param.name+".*?(?=\\,\\s\\$|$))");
-    var paramCode = paramString.match(paramCodeRE)[0];
+    var paramCode = paramString[1].match(paramCodeRE)[0];
     param.optional = paramCode.match(/:/) ? true : false;
     parameters.push(param);
   }
