@@ -75,7 +75,7 @@ Substitute.resolve = function (shortcode) {
 };
 
 Substitute.methods.lipsum = function (quantity, type) {
-  quantity = Math.min(quantity, 0);
+  quantity = Math.max(quantity, 1);
   if(['paragraphs', 'words', 'sentences'].indexOf(type) === -1) {
     type = 'paragraphs';
   }

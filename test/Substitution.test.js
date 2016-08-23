@@ -47,5 +47,13 @@ describe('Substitution', function () {
     assert.ok(subs.indexOf('Test') === 0);
     assert.ok(subs.indexOf('{lipsum') === -1);
 
+    markup = '@{lipsum:1:words}';
+    subs = Substitute.substitute(markup);
+    assert.ok(subs.split(' ').length === 1);
+
+    markup = '@{lipsum:3:words}';
+    subs = Substitute.substitute(markup);
+    assert.ok(subs.split(' ').length === 3);
+
   });
 });
