@@ -26,7 +26,13 @@ var Crawler = {};
  */
 Crawler.processFile = function ( file ) {
   var fileContent = require('fs').readFileSync(file);
-  var root = postcss().process(fileContent.toString(), {
+
+  // Normalize file content to Unix EOLs
+  fileContent = fileContent
+    .toString()
+    .replace(/(?:\r\n|\r|\n)/g, '\n');
+
+  var root = postcss().process(fileContent, {
     syntax: syntax
   }).root;
   return this.processNodes(root.nodes, file);

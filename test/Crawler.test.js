@@ -73,6 +73,10 @@ describe('Crawler', function() {
     it('should detect multiline DocBlocks', function () {
       assert.equal(Crawler.isDocBlock("*\n * @test"), true);
     });
+
+    it('should detect multiline DocBlocks with Windows EOLs', function () {
+      assert.equal(Crawler.isDocBlock("*\r\n * @test"), true);
+    });
   });
 
   /********************************************************/
