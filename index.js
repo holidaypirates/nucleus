@@ -4,7 +4,8 @@
  *
  * Copyright (C) 2016 Michael Seibt
  *
- * With contributions from: -
+ * With contributions from:
+ *  - Marco Vito Moscaritolo (@mavimo)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -93,7 +94,7 @@ require('mkdirp').sync(config.target);
 var templateFiles = ['atoms', 'molecules', 'index', 'nuclides', 'structures'];
 for(var t in templateFiles) {
   Verbose.spin('Generating files');
-  var html = jade.renderFile(__dirname + '/assets/views/'+templateFiles[t]+'.pug', {
+  var html = jade.renderFile(config.template.replace(/\/$/, '')+'/'+templateFiles[t]+'.pug', {
     styles : styleguides,
     index: searchIndex,
     meta: {

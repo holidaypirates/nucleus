@@ -2,6 +2,7 @@
 
 Sorted alphabeticaly by first name. [Full list of contributers](https://github.com/holidaypirates/nucleus/graphs/contributors)
 
+Marco Vito Moscaritolo ([GitHub](https://github.com/mavimo) &bull; [Twitter](https://twitter.com/mavimo))
 Michael Seibt ([GitHub](https://github.com/michaelseibt) &bull; [Twitter](https://twitter.com/divis0r))
 Thomas Carlson ([Github](https://github.com/thomas0c) &bull; [Twitter](https://twitter.com/thomasoc))
 

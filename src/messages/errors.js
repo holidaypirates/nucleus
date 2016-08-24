@@ -2,7 +2,8 @@
  *
  * Copyright (C) 2016 Michael Seibt
  *
- * With contributions from: -
+ * With contributions from:
+ *  - Marco Vito Moscaritolo (@mavimo)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -70,6 +71,15 @@ module.exports = {
       'title': 'Annotation block without rule.',
       'text': 'There was an annotation block, which is not followed by a CSS rule, variable or mixin. Check the file above. ' +
         'At least, you could add an empty rule.'
+    };
+  },
+  'no_valid_template': function() {
+    return {
+      'title': 'Template folder is not valid.',
+      'text': 'Double-check the ' + chalk.underline('template') + ' property in the configuration. ' +
+        'This should be a valid folder with template files to generate a valid styleguide.' +
+        'Default template is used. ' +
+        'Btw, the current working dir is ' + process.cwd()
     };
   },
 
