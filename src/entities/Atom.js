@@ -18,7 +18,7 @@ var Atom = function(raw) {
 
   // Set atom-specific entity properties
   this.type = "Atom";
-  this.fillable = ['atom', 'section', 'description', 'markup', 'deprecated'];
+  this.fillable = ['atom', 'section', 'description', 'markup', 'deprecated', 'script'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -30,6 +30,7 @@ var Atom = function(raw) {
     section: 'Atoms > ' + this.getSection(),
     description: raw.annotations.description,
     markup: raw.annotations.markup,
+    script: raw.annotations.script || false,
     deprecated: raw.annotations.deprecated || false,
     location: 'atoms.html',
     hash: this.hash()

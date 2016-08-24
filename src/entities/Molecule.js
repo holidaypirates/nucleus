@@ -17,7 +17,7 @@ var Molecule = function(raw) {
 
   // Set molecule-specific entity properties
   this.type = "Molecule";
-  this.fillable = ['molecule', 'section', 'description', 'markup', 'deprecated'];
+  this.fillable = ['molecule', 'section', 'description', 'markup', 'deprecated','script'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -30,6 +30,7 @@ var Molecule = function(raw) {
     description: raw.annotations.description,
     markup: raw.annotations.markup,
     deprecated: raw.annotations.deprecated || false,
+    script: raw.annotations.script || false,
     hash: this.hash(),
     location: 'molecules.html'
   };
