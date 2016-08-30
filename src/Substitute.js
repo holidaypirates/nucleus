@@ -85,6 +85,7 @@ Substitute.methods.lipsum = function (quantity, type) {
     count: quantity,
     units: type,
     random: this.staticLipsum ? function() {
+      if(rnd>=1) rnd = 0.01;
       rnd += 0.01;
       return rnd;
     } : Math.rand
