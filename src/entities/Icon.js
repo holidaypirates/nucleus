@@ -29,7 +29,7 @@ var Icon = function(raw) {
     type: 'icon',
     section: 'Atoms > Icons',
     markup: raw.annotations.markup,
-    deprecated: raw.annotations.deprecated || false,
+    deprecated: raw.annotations.deprecated,
     hash: this.hash(),
     location: 'atoms.html'
   };

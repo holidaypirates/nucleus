@@ -31,7 +31,7 @@ var Mixin = function(raw) {
     example: this.getExample(),
     section: 'Nuclides > Mixins > ' + this.getSection(),
     description: raw.annotations.description,
-    deprecated: raw.annotations.deprecated || false,
+    deprecated: raw.annotations.deprecated,
     signature: raw.descriptor.match(/[^\s\(]+(.*)/)[1],
     parameters: this.getParameters(),
     location: 'nuclides.html',

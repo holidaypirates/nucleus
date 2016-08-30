@@ -19,6 +19,8 @@ var Entity = function(raw) {
   this.fillable = [];
 
   this.raw.descriptor = this.getDescriptor();
+
+  this.setDefaultValues();
 };
 
 /**
@@ -60,7 +62,24 @@ Entity.prototype.validate = function() {
     Verbose.warn('section_delimiter', [this.raw]);
   }
 
+  // Set some default values
+  this.setDefaultValues();
+
   return true;
+};
+
+/**
+ * Sets some default values for allowed annotations.
+ *
+ * @return null
+ */
+Entity.prototype.setDefaultValues = function() {
+  if(this.fillable.indexOf('description') !== -1) {
+    this.raw.annotations.description = this.raw.annotations.description || '';
+  }
+  if(this.fillable.indexOf('deprecated') !== -1) {
+    this.raw.annotations.deprecated = this.raw.annotations.deprecated || false;
+  }
 };
 
 /**

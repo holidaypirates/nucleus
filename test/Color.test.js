@@ -39,7 +39,7 @@ describe('Color', function() {
       section: 'Nuclides > Colors > Other',
       description: 'Testcolor',
       descriptor: "$testcolor",
-      hash: "365756c58ccd875c65bb9a46e5e3157b73b86d94",
+      hash: "65edaeaf18d2ba3b22fd90b4526e155453ce0220",
       location: "nuclides.html",
       deprecated: false,
       values: {
