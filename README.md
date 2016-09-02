@@ -1,7 +1,5 @@
 [![Nucleus](https://holidaypirates.github.io/nucleus/images/git-header.png)](https://holidaypirates.github.io/nucleus/demo/index.html)
 
-Powerful management for crafted styles.
-
 [Home Page](https://holidaypirates.github.com/nucleus/index.html) &nbsp; &bull; &nbsp;
 [Demo](https://holidaypirates.github.com/nucleus/demo/index.html) &nbsp; &bull; &nbsp;
 [Getting Started](https://holidaypirates.github.com/nucleus/getting-started.html) &nbsp; &bull; &nbsp;
