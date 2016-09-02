@@ -8,7 +8,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 /**
- * Navigation bar for the top-level navigation.
+ * Navigation bar for the top-level navigation on both style guide and
+ * documentation pages. The active element is marked by a BEM modifier.
  *
  * @molecule Navigation-List
  * @section Navigation
@@ -58,7 +59,8 @@
 }
 
 /**
- * Icon navigation list
+ * Icon navigation for the right section of the header. This molecule basically
+ * composes icon-links with a reasonable spacing in between.
  *
  * @molecule Icon-Navigation
  * @section Navigation

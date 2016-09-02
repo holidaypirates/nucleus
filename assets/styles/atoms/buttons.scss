@@ -9,13 +9,14 @@
 
 /**
  * Generic button styles for a subtile button on light background and a more present button
- * for darker / colorful backgrounds.
+ * for darker / colorful backgrounds. Comes in two sizes: default (no BEM modifier) and a
+ * larger version (with .SG-button--large modifier).
  *
  * @atom Button
  * @markup
  *  <button class="SG-button">.SG-button</button>
  *  <button class="SG-button SG-button--large">.SG-button</button>
- *  <div style="padding: 5px; background: #f15f79; margin: 1em -5px;">
+ *  <div style="padding: 5px; background: #f15f79; display: inline-block; margin: 0 1em;">
  *    <button class="SG-button SG-button--white">.SG-button</button>
  *    <button class="SG-button SG-button--white SG-button--large">.SG-button</button>
  *  </div>
@@ -28,11 +29,17 @@
   padding: 10px 14px;
   display: inline-block;
   cursor: pointer;
+  outline: none;
   text-decoration: none;
 
   &:hover {
     border-color: $color--accent;
     color: $color--accent;
+  }
+
+  &:active {
+    background: linear-gradient(to bottom, #f2f2f2 0%, white 10%);
+    border-color: $color--light-gray;
   }
 
   // Larger button
@@ -49,6 +56,10 @@
     &:hover {
       background: white;
       color: $color--accent;
+    }
+
+    &:active {
+      background: linear-gradient(to bottom, #f2f2f2 0%, white 10%);
     }
   }
 }

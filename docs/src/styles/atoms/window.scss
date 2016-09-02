@@ -1,5 +1,7 @@
 /**
- * OS X window mockup. Fits well with the split-pane for the landing page.
+ * OS X window mockup. Fits well with the split-pane for the landing page - as
+ * shown in this example (we are using the @{include} substitution command here).
+ * In fact, you may put whatever content you like into the window.
  *
  * @atom Window
  * @markup
@@ -34,7 +36,9 @@
 }
 
 /**
- * Dragabble split-canvas for the rendered Nucleus preview in the landing-page hero.
+ * Dragabble split-canvas for the rendered Nucleus preview in the landing-page
+ * hero. Right now, we're not including the necessary JavaScript for this
+ * dynamic functionality, that's why it is just a static rendering.
  *
  * @molecule Split-Pane
  * @section Landing-Page

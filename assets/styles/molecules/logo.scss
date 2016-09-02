@@ -8,7 +8,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 /**
- * The logo, composed from icon and name.
+ * The logo, composed from icon and name, used on both style guide and
+ * documentation pages. Anyway, it does not scale well and is prone to
+ * style influences by the surrounding container.
  *
  * @molecule Logo
  * @markup
