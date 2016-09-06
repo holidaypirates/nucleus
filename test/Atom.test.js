@@ -37,7 +37,11 @@ describe('Atom', function() {
     assert.deepEqual(a, {
         name: 'Test-Component',
         type: 'atom',
+<<<<<<< HEAD
         hash: 'f1fd09603030380cf1118bea4efd24f1aa4673db',
+=======
+        hash: '7cf4b2beae2f0536b3ebb3030ccef2ed3d89c0fe',
+>>>>>>> upstream/master
         descriptor: '.test',
         location: 'atoms.html',
         section: 'Atoms > Other',

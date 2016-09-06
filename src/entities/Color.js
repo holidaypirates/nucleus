@@ -37,7 +37,7 @@ var Color = function(raw) {
     type: 'color',
     section: 'Nuclides > Colors > ' + this.getSection(),
     description: raw.annotations.description,
-    deprecated: raw.annotations.deprecated || false,
+    deprecated: raw.annotations.deprecated,
     location: 'nuclides.html',
     hash: this.hash(),
     values: {

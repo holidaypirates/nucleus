@@ -11,9 +11,9 @@
 block nav
   -var selected = 'nuclides'; //default
 
--var menu = { 'Nuclides': 'nuclides.html', 'Atoms': 'atoms.html', 'Molecules': 'molecules.html', 'Structures' : 'structures.html' };
+-var menu = {'Nuclides': 'nuclides.html', 'Atoms': 'atoms.html', 'Molecules': 'molecules.html', 'Structures' : 'structures.html' };
 
-div.SG-header
+.SG-header
   a(href="index.html").SG-logo
     span.SG-logo__icon.SG-ico.SG-ico--logo
     span.SG-logo__name #{meta.title}
@@ -26,7 +26,7 @@ div.SG-header
           a.SG-nav__item(href=link)= title
   ul.SG-nav-icons
     li
-      span.SG-nav-icons__item.SG-a(title="Search for components",   data-d-search-box-trigger)
+      a.SG-nav-icons__item(title="Search for components",href='javascript:void(0)',data-d-search-box-trigger)
         i.SG-ico.SG-ico--seach
     li
       a.SG-nav-icons__item(href="https://holidaypirates.github.com/nucleus", title="Help and Documentation", target="_blank")

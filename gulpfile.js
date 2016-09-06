@@ -13,6 +13,12 @@
 
 'use strict';
 
+/*
+|--------------------------------------------------------------------------
+| DEPENDENCIES
+|--------------------------------------------------------------------------
+*/
+
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');             // Transpiles SASS to CSS
 var webpack     = require('webpack');               // Used for Javascript packing
@@ -30,12 +36,24 @@ var reporter    = require("postcss-reporter");      // Reporter for PostCSS
 var stylelint   = require("stylelint");             // Lints styles according to a ruleset
 var scss        = require("postcss-scss");          // SCSS syntax for PostCSS
 
+/*
+|--------------------------------------------------------------------------
+| CONFIGURATION
+|--------------------------------------------------------------------------
+*/
+
 var SOURCES     = 'assets';
 var TARGET      = 'build';
 var PRODUCTION  = process.argv.indexOf('--production') !== -1;
 var LOG_CODE   = [
     'console.log', 'console.warn', 'console.info', 'debugger;'
 ];
+
+/*
+|--------------------------------------------------------------------------
+| TASK GROUPS
+|--------------------------------------------------------------------------
+*/
 
 gulp.task('default', ['dev']);
 gulp.task('dev',     ['build', 'watch', 'lint']);

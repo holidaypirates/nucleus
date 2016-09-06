@@ -30,8 +30,12 @@ var Structure = function(raw) {
     section: 'Structures > ' + this.getSection(),
     description: raw.annotations.description,
     markup: raw.annotations.markup,
+<<<<<<< HEAD
     deprecated: raw.annotations.deprecated || false,
     script: raw.annotations.script || false,
+=======
+    deprecated: raw.annotations.deprecated,
+>>>>>>> upstream/master
     flags: this.getFlags(),
     location: 'structures.html',
     hash: this.hash()

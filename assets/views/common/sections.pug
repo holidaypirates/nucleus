@@ -12,9 +12,9 @@ include ./components.pug
 
 mixin section-second-level ( items )
   each elements, title in items
-    div.SG-row
-      div.SG-gr-12
-        div.SG-h2(id='_'+title) #{title}
+    .SG-row
+      .SG-gr-12
+        .SG-h2(id='_'+title) #{title}
 
     //- Entities in this section
     -if(title === '_e')
@@ -32,11 +32,11 @@ mixin section-nth-level ( items, parents, toplevel)
     else
       //- Otherwise, it's a subsection
       if (title !== 'Other') && elements._e
-        div.SG-row
-          dif.SG-gr-12
+        .SG-row
+          .SG-gr-12
             if parents.length > 0
-              div.SG-h3 #{parents.join(' > ')} &gt; #{title}
+              .SG-h3 #{parents.join(' > ')} &gt; #{title}
             else
-              div.SG-h3(id='_' + toplevel + '_' + title) #{title}
+              .SG-h3(id='_' + toplevel + '_' + title) #{title}
 
       +section-nth-level ( elements, parents.concat([title]))

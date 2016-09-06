@@ -52,13 +52,14 @@
 }
 
 /**
- * Generic paragraph style for medium to long blocks of text.
+ * Generic paragraph style for medium to long blocks of text. This element
+ * is using the @{lipsum} substitution to generate two blocks of text.
  *
  * @atom Paragraph
  * @section Typography
  * @markup
  *  <div class="SG-p">
- *    @{lipsum:3:paragraphs}
+ *    @{lipsum:2:paragraphs}
  *  </div>
  *  <div class="SG-p">
  *    @{lipsum:1:paragraphs}
@@ -81,7 +82,7 @@
  * @section Typography
  * @markup
  *  <div class="SG-hint SG-p">
- *    @{lipsum:3:paragraphs}
+ *    @{lipsum:1:paragraphs}
  *  </div>
  */
 .SG-hint {
@@ -93,7 +94,10 @@
 }
 
 /**
- * Basic styles to decorate text.
+ * Basic styles to decorate text. Since we don't want to use HTML markup to
+ * achieve bold text (in order to avoid style conflicts), we utilize those
+ * helper classes here. In general, every style coming from Nucleus is prefixed
+ * with SG- (for style guide).
  *
  * @atom Basic Text Styles
  * @section Typography

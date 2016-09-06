@@ -10,6 +10,7 @@
  */
 
 /* global process */
+/* global __dirname */
 
 'use strict';
 
@@ -67,6 +68,12 @@ Config.parse = function () {
   // CLI arguments have more priority than user config file
   config = merge(config, this.getFromArguments());
 
+  // If only one CSS file string is set to be included, wrap it in an
+  // array to qualify looping
+  if(typeof config.css === 'string') {
+    config.css = [config.css];
+  }
+
   // If only one glob pattern is configured, wrap it in an array
   // to qualify the loop.
   if(typeof config.files === 'string') {
@@ -119,11 +126,13 @@ Config.getFromArguments = function () {
     cliConfig.files = argv._;
   }
 
-  if(argv.verbose) cliConfig.verbose = argv.verbose;
-  if(argv.target)  cliConfig.target = argv.target;
-  if(argv.title)   cliConfig.title = argv.title;
-  if(argv.template)  cliConfig.template = argv.template;
-  if(argv.norandom)  cliConfig.staticLipsum = !!argv.norandom;
+  if(argv.verbose)    cliConfig.verbose = argv.verbose;
+  if(argv.target)     cliConfig.target = argv.target;
+  if(argv.title)      cliConfig.title = argv.title;
+  if(argv.css)        cliConfig.css = argv.css;
+  if(argv.template)   cliConfig.template = argv.template;
+  if(argv.norandom)   cliConfig.staticLipsum = !!argv.norandom;
+
   return cliConfig;
 };
 

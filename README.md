@@ -1,6 +1,4 @@
-# Nucleus Style Guide
-
-Powerful management for crafted styles.
+[![Nucleus](https://holidaypirates.github.io/nucleus/images/git-header.png)](https://holidaypirates.github.io/nucleus/demo/index.html)
 
 [Home Page](https://holidaypirates.github.com/nucleus/index.html) &nbsp; &bull; &nbsp;
 [Demo](https://holidaypirates.github.com/nucleus/demo/index.html) &nbsp; &bull; &nbsp;
@@ -9,7 +7,7 @@ Powerful management for crafted styles.
 
 Nucleus is a living style guide generator for atomic css based components. It's a Node application parsing the source SCSS files and reading information from DocBlock annotations.
 
-![Nucleus Preview](https://holidaypirates.github.io/nucleus/images/split-preview.png)
+![Nucleus Preview](https://holidaypirates.github.io/nucleus/images/git-teaser.png)
 
 ## Quick start
 

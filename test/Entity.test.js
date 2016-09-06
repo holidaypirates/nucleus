@@ -12,6 +12,21 @@ describe('Entity', function() {
 
   /********************************************************/
 
+  it('should set a default values as fallback', function() {
+    var e = new Entity({
+      type: 'nuclide',
+      annotations: {}
+    });
+
+    e.fillable = ['description', 'deprecated'];
+
+    assert.equal(e.validate(), true);
+    assert.equal(e.raw.annotations.description, '');
+    assert.equal(e.raw.annotations.deprecated, false);
+  });
+
+  /********************************************************/
+
   describe('#getSection', function() {
 
     it('should return the trimmed section value', function() {

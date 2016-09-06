@@ -29,8 +29,12 @@ var Molecule = function(raw) {
     section: 'Molecules > ' + this.getSection(),
     description: raw.annotations.description,
     markup: raw.annotations.markup,
+<<<<<<< HEAD
     deprecated: raw.annotations.deprecated || false,
     script: raw.annotations.script || false,
+=======
+    deprecated: raw.annotations.deprecated,
+>>>>>>> upstream/master
     hash: this.hash(),
     location: 'molecules.html'
   };

@@ -61,4 +61,12 @@ module.exports = {
       'text': ''
     };
   },
+  // Whenever we try to substitute with unknown selector markup.
+  'unknown_selector': function (selector) {
+    return {
+      'title': 'Can\'t find selector ' + selector + ' for markup substitution',
+      'text': 'You try to substitute with @{include:' + selector + '}, but ' + selector + ' cannot be found. ' +
+        'Make sure '+selector+' really exists and it is annotated (which makes it \'visible\' for Nucleus.'
+    };
+  },
 };

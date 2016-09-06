@@ -30,8 +30,12 @@ var Atom = function(raw) {
     section: 'Atoms > ' + this.getSection(),
     description: raw.annotations.description,
     markup: raw.annotations.markup,
+<<<<<<< HEAD
     script: raw.annotations.script || false,
     deprecated: raw.annotations.deprecated || false,
+=======
+    deprecated: raw.annotations.deprecated,
+>>>>>>> upstream/master
     location: 'atoms.html',
     hash: this.hash()
   };

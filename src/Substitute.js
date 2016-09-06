@@ -85,6 +85,7 @@ Substitute.methods.lipsum = function (quantity, type) {
     count: quantity,
     units: type,
     random: this.staticLipsum ? function() {
+      if(rnd>=1) rnd = 0.01;
       rnd += 0.01;
       return rnd;
     } : Math.rand
@@ -93,9 +94,15 @@ Substitute.methods.lipsum = function (quantity, type) {
 
 Substitute.methods.include = function ( selector ) {
   var markup = _.get(this.map, selector);
+
   if(markup) {
     return markup;
   }
+
+  // If the selector is not visible / existing, show
+  // a warning and return an empty string.
+  Verbose.warn('unknown_selector', [selector]);
+  return '';
 };
 
 Substitute.methods.image = function (width, height) {

@@ -7,6 +7,24 @@
                          |___/              |___/
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.0.7                                                   30.08.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Features
+--------
+
+* Support multiple CSS includes when configured as array of paths.
+
+Bugfixes
+--------
+
+* Fix 'false' being print as description if no description is present in the
+  DocBlock of the element.
+
+* Fix statically generated placeholder texts printing "undefined" after a
+  certain amount of words.
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ VERSION 1.0.6                                                   23.08.2016 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 

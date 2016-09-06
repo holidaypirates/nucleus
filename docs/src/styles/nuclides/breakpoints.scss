@@ -22,6 +22,12 @@
   /* placeholder */
 }
 
+/**
+ * List of available breakpoints for the use with the mq-mixin.
+ *
+ * @nuclide
+ * @section Config
+ */
 $mq-breakpoints: (
     tiny: 350px,
     mobile:  425px,
