@@ -4,5 +4,10 @@ node_js:
   - stable
 
 before_script:
-- npm install -g gulp
-- npm run build
+  - npm install -g gulp
+  - npm run build
+  - npm run build_docs
+  - node index.js --config demo.nucleus.json
+
+after_success:
+  - bash deploy.sh
