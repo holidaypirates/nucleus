@@ -1,7 +1,7 @@
 {
   "name": "nucleus-styleguide",
   "license": "MIT",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "main": "index.js",
   "description": "Generate an atomic style guide from DocBlock annotations",
   "author": "Michael Seibt <michael@bedshaped.de>",
@@ -84,6 +84,7 @@
     "keymaster": "^1.6.2",
     "merge-stream": "^1.0.0",
     "mocha": "^3.0.2",
+    "postcss-less": "^0.15.0",
     "postcss-reporter": "^1.4.1",
     "prismjs": "^1.5.1",
     "sass-mq": "^3.2.9",

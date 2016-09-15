@@ -82,5 +82,11 @@ module.exports = {
         'Btw, the current working dir is ' + process.cwd()
     };
   },
+  'unknown_file_format': function(file) {
+    return {
+      'title': 'No processor available for '+file+'.',
+      'text': 'We\'ve got no processor available for this type of CSS pre-processor.'
+    };
+  },
 
 };

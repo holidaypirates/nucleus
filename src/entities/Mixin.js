@@ -66,7 +66,7 @@ Mixin.prototype.getParameters = function() {
 
   for(var p in docParameters) {
     var param = this.getParameter(docParameters[p]);
-    var paramCodeRE = new RegExp("(\\"+param.name+".*?(?=\\,\\s\\$|$))");
+    var paramCodeRE = new RegExp("(\\"+param.name+".*?(?=\\,\\s(\\$|@)|$))");
     var paramCode = paramString[1].match(paramCodeRE)[0];
     param.optional = paramCode.match(/:/) ? true : false;
     parameters.push(param);

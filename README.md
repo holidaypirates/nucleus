@@ -9,7 +9,7 @@
 [![npm](https://badge.fury.io/js/nucleus-styleguide.svg)](https://www.npmjs.com/package/nucleus-styleguide)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE)
 
-Nucleus is a living style guide generator for atomic css based components. It's a Node application parsing the source SCSS files and reading information from DocBlock annotations.
+Nucleus is a living style guide generator for atomic css based components. It's a Node application parsing the source CSS / SCSS / LESS files and reading information from DocBlock annotations.
 
 ![Nucleus Preview](https://holidaypirates.github.io/nucleus/images/git-teaser.png)
 

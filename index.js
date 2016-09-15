@@ -41,7 +41,11 @@ if(Config.shouldRunInit()) {
 var config = Config.parse();
 Verbose.setLevel(config.verbose);
 Verbose.start();
-Verbose.status('Found ' + config.files.length + ' files.');
+Verbose.status(
+  'Nucleus ' + require('./package.json').version + ' ' +
+  'has found ' + config.files.length + ' files.'
+);
+Verbose.log('');
 
 /*
 |--------------------------------------------------------------------------

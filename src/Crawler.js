@@ -12,7 +12,9 @@
 
 var Verbose = require('./Verbose');
 var postcss = require('postcss');
-var syntax = require('postcss-scss');
+var scssSyntax = require('postcss-scss');
+var lessSyntax = require('postcss-less');
+var path = require('path');
 
 var Crawler = {};
 
@@ -32,10 +34,37 @@ Crawler.processFile = function ( file ) {
     .toString()
     .replace(/(?:\r\n|\r|\n)/g, '\n');
 
+  // Get the PostCSS syntax for the file extention
+  var syntax = this.getSyntaxProcessor(file);
+  if(!syntax) {
+    Verbose.error('unknown_file_format', [file]);
+    return [];
+  }
+
   var root = postcss().process(fileContent, {
     syntax: syntax
   }).root;
   return this.processNodes(root.nodes, file);
+};
+
+/**
+ * Return the matching PostCSS processor for a specific file
+ * extention.
+ *
+ * @param  {string} filename
+ *         The name of the file
+ * @return {object|null}
+ *         Returns either a reference to a PostCSS syntax or `null`
+ *         if no processor is available for this type of file.
+ */
+Crawler.getSyntaxProcessor = function (filename) {
+  var ext = path.extname(filename);
+  switch(ext) {
+    case '.less': return lessSyntax;
+    case '.css':  // Fallthrough
+    case '.sass': // Fallthrough
+    case '.scss': return scssSyntax;
+  }
 };
 
 /**

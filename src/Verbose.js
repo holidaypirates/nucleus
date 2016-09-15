@@ -48,7 +48,7 @@ Verbose.exit = function (status) {
 
 Verbose.status = function ( text ) {
   if(this.level < this.LEVELS.DEFAULT) return;
-  this.log(chalk.blue(this.wordwrap(text)));
+  this.log(chalk.cyan.bold(this.wordwrap(text)));
 };
 
 Verbose.debug = function ( data ) {
@@ -145,8 +145,8 @@ Verbose.start = function () {
 Verbose.finished = function () {
   if(this.level >= this.LEVELS.DEFAULT) {
     var seconds = process.hrtime(this.startTime)[0];
-    this.log('\n ' + chalk.green('Finished!') + ' ' +
-      chalk.dim('Took me ' +  seconds + ' second' + (seconds !== 1 ? 's' : '') + '.\n'));
+    this.log('\n\n ' + chalk.bold.green('Finished!') + ' ' +
+      chalk.dim('Took ' +  seconds + ' second' + (seconds !== 1 ? 's' : '') + '.\n'));
   }
   this.exit(0);
 };

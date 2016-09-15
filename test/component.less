@@ -1,12 +1,12 @@
 /** @color Primary Action */
-$color--primary: green;
+@color--primary: green;
 
 /**
  * Abort Action
  *
  * @color
  */
-$color--primary: red;
+@color--primary: red;
 
 /**
  * This is the description for the test component,
@@ -23,11 +23,11 @@ $color--primary: red;
   border: 1px solid blue;
 
   &.button--primary {
-    background-color: $color--primary;
+    background-color: @color--primary;
   }
 
   &.button--cancel {
-    background-color: $color--abort;
+    background-color: @color--abort;
   }
 }
 
@@ -35,9 +35,9 @@ $color--primary: red;
  * Manages the z-index of elements, taking the values from a pre-configured list.
  *
  * @mixin
- * @param $position The named position
- * @param $scope The scope of the element. Each scope organizes the elements anew, starting from the lowest z-index. Default value is „default“
+ * @param @position The named position
+ * @param @scope The scope of the element. Each scope organizes the elements anew, starting from the lowest z-index. Default value is „default“
  */
-@mixin z($position, $scope) {
+.z(@position, @scope) {
 
 }
