@@ -2,7 +2,9 @@
   "title":  "Nucleus",
   "files":  [
     "*.scss",
-    "**/*.scss"
+    "**/*.scss",
+    "*.less",
+    "**/*.less"
   ],
   "target"  : "styleguide",
   "css" : null,

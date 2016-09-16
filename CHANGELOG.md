@@ -7,6 +7,27 @@
                          |___/              |___/
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.1.0                                                   __.09.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Features
+--------
+
+* Added support for LESS - you are even able to pass both SASS/SCSS and LESS
+  files to Nucleus at the same time.
+
+* Added version console output
+
+Bugfixes
+--------
+
+* Show warning if substitution attempt with unknown selector and return empty
+  string instead of 'undefined'.
+
+* Lots of documentation typo fixes and small style fixes for both Nucleus
+  and the docs.
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ VERSION 1.0.7                                                   30.08.2016 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
