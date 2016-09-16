@@ -28,6 +28,7 @@
  */
 .SG-nav {
   @include reset();
+
   list-style-type: none;
   text-align: center;
 
@@ -42,6 +43,7 @@
     margin: 0 15px;
     color: $color--gray;
     font-size: 16px;
+
     &:hover {
       color: $color--dark-gray;
       border-bottom: 2px solid $color--light-gray;
@@ -52,6 +54,7 @@
     border-bottom: 3px solid $color--accent;
     margin-bottom: -1px;
     color: $color--dark-gray;
+
     &:hover {
       border-bottom: 3px solid $color--accent;
     }
@@ -80,12 +83,14 @@
  */
 .SG-nav-icons {
   @include reset();
+
   list-style-type: none;
   line-height: 67px;
   text-align: right;
 
   li {
     display: inline-block;
+
     &:not(:last-child) {
       margin-right: 2em;
     }
@@ -93,6 +98,7 @@
 
   .SG-nav-icons__item {
     color: $color--light-gray;
+
     &:hover {
       color: $color--gray;
     }
@@ -129,7 +135,7 @@
   margin-bottom: 4em;
 
   ul {
-    padding-left: 0em;
+    padding-left: 0;
     line-height: 30px;
     margin: 0;
   }
@@ -157,6 +163,7 @@
     padding-bottom: 0.5em;
     margin-bottom: 0.5em;
     font-size: 16px;
+
     &:not(:first-child) {
       margin-top: 2em;
     }

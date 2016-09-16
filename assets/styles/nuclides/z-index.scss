@@ -38,8 +38,8 @@ $z-map: (
   @if map-has-key($z, $type) {
 
     // Check if 'name' is available
-    @if map-has-key(map-get($z,$type), $name) {
-      z-index: map-get(map-get($z,$type), $name);
+    @if map-has-key(map-get($z, $type), $name) {
+      z-index: map-get(map-get($z, $type), $name);
     } @else {
       @warn 'There is not elements "#{$name}" in the z map available.';
     }

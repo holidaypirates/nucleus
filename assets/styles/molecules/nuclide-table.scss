@@ -28,9 +28,9 @@
   border-left-width: 3px;
   font-size: 14px;
 
-
   .SG-config__row {
     @include clearAfter();
+
     &:not(:last-of-type) {
       border-bottom: 1px solid $color--light-gray;
     }
@@ -38,6 +38,7 @@
 
   .SG-config__label {
     @include lato(600);
+
     padding: 10px 20px;
     min-width: 150px;
     display: block;
@@ -46,6 +47,7 @@
 
   .SG-config__value {
     @include monospace();
+
     padding: 10px 20px;
     display: inline-block;
 

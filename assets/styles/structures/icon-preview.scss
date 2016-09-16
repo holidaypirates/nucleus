@@ -9,10 +9,12 @@
 
 .SG-icon-preview {
   @include reset();
+
   margin-bottom: 50px;
 
   .SG-icon-preview__name {
     @include reset();
+
     color: $color--accent;
     display: inline-block;
   }
@@ -21,6 +23,7 @@
     display: inline-block;
     line-height: 1;
     width: 12.5%;
+
     &::after {
       display: block;
       font-size: 12px;
@@ -31,6 +34,7 @@
 
   .SG-icon-preview__copy {
     margin-top: 15px;
+
     .SG-ico {
       font-size: 12px;
     }

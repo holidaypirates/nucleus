@@ -50,7 +50,8 @@
  *  @include clearHard();
  */
 @mixin clearHard() {
-  &::after, &::before {
+  &::after,
+  &::before {
     content: "";
     display: block;
     height: 1px;

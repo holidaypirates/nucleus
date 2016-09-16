@@ -17,6 +17,7 @@
  */
 .SG-layout {
   @include reset();
+
   width: 100%;
   max-width: 937px;
   margin-left: auto;
@@ -45,6 +46,7 @@
     float: left;
     width: 20%;
   }
+
   .SG-layout__content {
     float: right;
     width: 75%;
