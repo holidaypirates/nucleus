@@ -7,7 +7,7 @@
     "**/*.less"
   ],
   "target"  : "styleguide",
-  "css" : null,
+  "css" : [],
   "namespace": "page",
   "verbose" : 3,
   "counterCSS" : null,

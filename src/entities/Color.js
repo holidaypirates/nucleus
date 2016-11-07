@@ -39,6 +39,7 @@ var Color = function(raw) {
     description: raw.annotations.description,
     deprecated: raw.annotations.deprecated,
     location: 'nuclides.html',
+    computed: !!raw.computed,
     hash: this.hash(),
     values: {
       hex: colorValue.hexString(),

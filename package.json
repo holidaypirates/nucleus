@@ -15,7 +15,7 @@
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover _mocha",
     "build": "./node_modules/.bin/gulp build --production",
-    "build_docs": "./node_modules/.bin/gulp dist --gulpfile docs/gulpfile.js --production"
+    "build_docs": "./node_modules/.bin/gulp dist --gulpfile docs/gulpfile.js --production && node index.js --config demo.nucleus.json"
   },
   "bin": {
     "nucleus": "./bin.js"
@@ -45,6 +45,7 @@
     "lorem-ipsum": "^1.0.3",
     "merge": "^1.2.0",
     "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.0",
     "ora": "^0.3.0",
     "postcss": "^5.1.2",
     "postcss-scss": "^0.1.9",

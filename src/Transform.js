@@ -1,4 +1,4 @@
-/* Transform.js -- Resolves annotation blocks into entity objects
+/* Transform.js -- Transforms annotation blocks into entity objects
  *
  * Copyright (C) 2016 Michael Seibt
  *

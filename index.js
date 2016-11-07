@@ -16,6 +16,7 @@
 var Config = require('./src/Config');
 var Verbose = require('./src/Verbose');
 var Crawler = require('./src/Crawler');
+var Resolver = require('./src/Resolver');
 var Transform = require('./src/Transform');
 var Substitute = require('./src/Substitute');
 var SearchIndex = require('./src/SearchIndex');
@@ -28,7 +29,7 @@ var jade = require('pug');
 |--------------------------------------------------------------------------
 |
 | We need to collect configuration and environment information before
-| starting the application.
+| starting the pipeline.
 |
 */
 
@@ -42,8 +43,8 @@ var config = Config.parse();
 Verbose.setLevel(config.verbose);
 Verbose.start();
 Verbose.status(
-  'Nucleus ' + require('./package.json').version + ' ' +
-  'has found ' + config.files.length + ' files.'
+  `Nucleus ${require('./package.json').version} has found ${config.files.length} file` +
+  ( config.files.length == 1 ? '' : 's') + '.'
 );
 Verbose.log('');
 
@@ -63,6 +64,19 @@ for(var f in config.files) {
   var style = Crawler.processFile(file);
   styles = styles.concat(style);
 }
+
+/*
+|--------------------------------------------------------------------------
+| RESOLVE
+|--------------------------------------------------------------------------
+|
+| Before we can pass the style information to the views, we first have to
+| resolve some mixin generated values, like colors defined my modifiers
+| such as lighten or darken.
+|
+*/
+
+styles = Resolver.resolveAll(styles);
 
 /*
 |--------------------------------------------------------------------------

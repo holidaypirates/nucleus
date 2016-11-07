@@ -17,7 +17,7 @@ var Molecule = function(raw) {
 
   // Set molecule-specific entity properties
   this.type = "Molecule";
-  this.fillable = ['molecule', 'section', 'description', 'markup', 'deprecated'];
+  this.fillable = ['molecule', 'section', 'description', 'markup', 'deprecated', 'flag'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -31,6 +31,7 @@ var Molecule = function(raw) {
     markup: raw.annotations.markup,
     deprecated: raw.annotations.deprecated,
     hash: this.hash(),
+    flags: this.getFlags(),
     location: 'molecules.html'
   };
 
@@ -43,6 +44,19 @@ Molecule.prototype.getName = function() {
     this.raw.annotations.molecule = "Unnamed";
   }
   return this.raw.annotations.molecule;
+};
+
+// TODO: Remove code duplication
+Molecule.prototype.getFlags = function() {
+  var raw_flags = this.raw.annotations.flag || [];
+  var flags = {};
+  if(raw_flags.indexOf('full-width') !== -1) {
+    flags.fullWidth = true;
+  }
+  if(raw_flags.indexOf('inline') !== -1) {
+    flags.inline = true;
+  }
+  return flags;
 };
 
 module.exports = Molecule;

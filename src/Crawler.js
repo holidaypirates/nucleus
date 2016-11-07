@@ -10,13 +10,13 @@
 
 'use strict';
 
-var Verbose = require('./Verbose');
-var postcss = require('postcss');
-var scssSyntax = require('postcss-scss');
-var lessSyntax = require('postcss-less');
-var path = require('path');
+const Verbose = require('./Verbose');
+const postcss = require('postcss');
+const scssSyntax = require('postcss-scss');
+const lessSyntax = require('postcss-less');
+const path = require('path');
 
-var Crawler = {};
+const Crawler = {};
 
 /**
  * Reads the files content and returnes the parsed styleguide information.
