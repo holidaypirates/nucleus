@@ -93,6 +93,22 @@ block content
       div.SG-config__label Example
       div.SG-config__value nucleus --template=./styleguide/my-theme
 
+  h3.SG-h3 Placeholder Image Service
+  p.SG-p Lets you override the default image placeholder service. The value will be used in a template literal, and can accept the width, and height parameters.
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label CLI flag
+      div.SG-config__value --placeholderservice
+    div.SG-config__row
+      div.SG-config__label Config key
+      div.SG-config__value placeholderService
+    div.SG-config__row
+      div.SG-config__label Default value
+      div.SG-config__value false
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value nucleus --placeholderService http://placehold.it/${width}x${height}
+
   h3.SG-h3 Static dummy texts and images
   p.SG-p For easier visual regression testing, you may disable the generation of randomized lipsum texts and image placeholders. With this option enabled, you will always get the same (boring) placeholders.
   div.SG-config

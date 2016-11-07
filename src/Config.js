@@ -4,6 +4,7 @@
  *
  * With contributions from:
  *  - Marco Vito Moscaritolo (@mavimo)
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -126,12 +127,13 @@ Config.getFromArguments = function () {
     cliConfig.files = argv._;
   }
 
-  if(argv.verbose)    cliConfig.verbose = argv.verbose;
-  if(argv.target)     cliConfig.target = argv.target;
-  if(argv.title)      cliConfig.title = argv.title;
-  if(argv.css)        cliConfig.css = argv.css;
-  if(argv.template)   cliConfig.template = argv.template;
-  if(argv.norandom)   cliConfig.staticLipsum = !!argv.norandom;
+  if(argv.verbose)              cliConfig.verbose = argv.verbose;
+  if(argv.target)               cliConfig.target = argv.target;
+  if(argv.title)                cliConfig.title = argv.title;
+  if(argv.css)                  cliConfig.css = argv.css;
+  if(argv.template)             cliConfig.template = argv.template;
+  if(argv.placeholderservice)   cliConfig.placeholderService = argv.placeholderservice;
+  if(argv.norandom)             cliConfig.staticLipsum = !!argv.norandom;
 
   return cliConfig;
 };
