@@ -114,7 +114,7 @@ Entity.prototype.getDescriptor = function() {
  */
 Entity.prototype.getModifiers = function () {
   // Check for a modifier annotation.
-  if (typeof this.raw.annotations.modifiers !== 'undefined') {
+  if (typeof this.raw.annotations.modifiers !== 'undefined' && this.raw.annotations.modifiers !== null) {
     const modifiers        = this.raw.annotations.modifiers;
     const modifiersArray   = modifiers.split('\n');
     let formattedModifiers = []; // the container array for final output.
