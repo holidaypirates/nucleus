@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -18,7 +19,7 @@ var Structure = function(raw) {
 
   // Set structure-specific entity properties
   this.type = "Structure";
-  this.fillable = ['structure', 'section', 'description', 'markup', 'flag', 'deprecated'];
+  this.fillable = ['structure', 'section', 'description', 'modifiers', 'markup', 'flag', 'deprecated'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -29,6 +30,7 @@ var Structure = function(raw) {
     descriptor: raw.descriptor,
     section: 'Structures > ' + this.getSection(),
     description: raw.annotations.description,
+    modifiers: this.getModifiers(),
     markup: raw.annotations.markup,
     deprecated: raw.annotations.deprecated,
     flags: this.getFlags(),

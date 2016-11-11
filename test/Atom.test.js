@@ -41,6 +41,7 @@ describe('Atom', function() {
         location: 'atoms.html',
         section: 'Atoms > Other',
         description: 'A test description',
+        modifiers: null,
         markup: '...',
         deprecated: false
     });
@@ -69,6 +70,7 @@ describe('Atom', function() {
         location: 'atoms.html',
         section: 'Atoms > Other',
         description: 'A test description',
+        modifiers: null,
         markup: '...',
         deprecated: true
     });
