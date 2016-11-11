@@ -27,7 +27,7 @@ var Entity = function(raw) {
 /**
  * Checks the incoming raw style data for common mistakes.
  *
- * @return {book}
+ * @return {bool}
  *         Returns true if the style is solid enough for further processing.
  */
 Entity.prototype.validate = function() {
