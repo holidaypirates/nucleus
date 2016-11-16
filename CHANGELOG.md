@@ -7,6 +7,21 @@
                          |___/              |___/
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.0.8                                                   16.11.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Announcement
+------------
+
+* We are actively developing 1.1.0 with support for LESS and Mixin-Defined
+  colors, as well as ES 6 syntax and better error handling. Stay tuned!
+
+Features
+--------
+
+* Added Config for alternative placeholder services (thanks Ryan Potter).
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ VERSION 1.0.7                                                   30.08.2016 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
