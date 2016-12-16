@@ -1,0 +1,29 @@
+extends layouts/doc-page
+
+block title
+  | Modifiers
+
+block content
+  h1.SG-h1 Modifiers
+  p.SG-p.
+    For listing variations of blocks/elements @modifiers are available to use on certain elements.
+
+  p.SG-p.
+    For example, if you have modifiers for an element that you need to document, but don't necessarily want to display in the @markup.
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     *
+     *
+     * @atom Button
+     * @modifiers
+     *  .btn--primary for use in positive flows
+     *  .btn--secondary for use in alternative flows
+     * @markup
+     *  ...
+     */
+    .btn {
+      ...
+      &--primary { /* ... */ }
+      &--secondary { /* ... */ }
+    }

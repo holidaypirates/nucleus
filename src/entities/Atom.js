@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -12,13 +13,13 @@
 
 var Entity = require('./Entity');
 
-var Atom = function(raw) {
+var Atom = function (raw) {
   // Call parent constructor
   Entity.call(this, raw);
 
   // Set atom-specific entity properties
-  this.type = "Atom";
-  this.fillable = ['atom', 'section', 'description', 'markup', 'deprecated'];
+  this.type     = "Atom";
+  this.fillable = ['atom', 'section', 'description', 'modifiers', 'markup', 'deprecated'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -29,6 +30,7 @@ var Atom = function(raw) {
     type: 'atom',
     section: 'Atoms > ' + this.getSection(),
     description: raw.annotations.description,
+    modifiers: this.getModifiers(),
     markup: raw.annotations.markup,
     deprecated: raw.annotations.deprecated,
     location: 'atoms.html',
