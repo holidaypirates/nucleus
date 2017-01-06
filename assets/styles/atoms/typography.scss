@@ -3,6 +3,7 @@
 // Copyright (C) 2016 Michael Seibt
 //
 // With contributions from: -
+//  - Ryan Potter (www.ryanpotter.co.nz)
 //
 // This software may be modified and distributed under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -49,6 +50,12 @@
   padding-bottom: 1em;
   margin: 1em 0;
   border-bottom: 1px dashed $color--light-gray;
+}
+
+.SG-h5 {
+  color: $color--dark-gray;
+  font-size: 14px;
+  margin: 1em 0;
 }
 
 /**

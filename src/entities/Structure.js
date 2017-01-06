@@ -18,7 +18,7 @@ var Structure = function(raw) {
 
   // Set structure-specific entity properties
   this.type = "Structure";
-  this.fillable = ['structure', 'section', 'description', 'markup', 'flag', 'deprecated','script'];
+  this.fillable = ['structure', 'section', 'description', 'modifiers', 'markup', 'flag', 'deprecated','script'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -29,13 +29,10 @@ var Structure = function(raw) {
     descriptor: raw.descriptor,
     section: 'Structures > ' + this.getSection(),
     description: raw.annotations.description,
+    modifiers: this.getModifiers(),
     markup: raw.annotations.markup,
-<<<<<<< HEAD
-    deprecated: raw.annotations.deprecated || false,
     script: raw.annotations.script || false,
-=======
     deprecated: raw.annotations.deprecated,
->>>>>>> upstream/master
     flags: this.getFlags(),
     location: 'structures.html',
     hash: this.hash()

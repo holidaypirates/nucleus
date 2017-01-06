@@ -47,10 +47,10 @@ block content
      * @section Style Mixins
      * @param $radius This could be single line ...
      * @param $color
-     *   Or multi-line, you decide!
+     *  Or multi-line, you decide!
      * @example
-     *   @include brc(3px);
-     *   @include brc(3px, $color--red);
+     *  @include brc(3px);
+     *  @include brc(3px, $color--red);
      */
     @mixin brc($radius, $color = '#333') {
       /* ... */
@@ -65,13 +65,15 @@ block content
     /**
      * @atom Button
      * @section Navigation &gt; Buttons
+     * @modifiers
+     *  .button--alert an alert button
      * @markup
-     *   &lt;button class="button"&gt;
-     *     A button
-     *   &lt;/button&gt;
-     *   &lt;button class="button button--alert"&gt;
-     *     An alert button
-     *   &lt;/button&gt;
+     *  &lt;button class="button"&gt;
+     *    A button
+     *  &lt;/button&gt;
+     *  &lt;button class="button button--alert"&gt;
+     *    An alert button
+     *  &lt;/button&gt;
      */
     .button {
      /* ... */
