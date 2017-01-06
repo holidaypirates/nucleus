@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -16,11 +17,13 @@ var Verbose = require('./Verbose');
 var Substitute = {
   map: {},
   methods: {},
-  staticLipsum: false
+  staticLipsum: false,
+  placeholderService: false
 };
 
 Substitute.injectConfig = function ( config ) {
   this.staticLipsum = config.staticLipsum;
+  this.placeholderService = config.placeholderService;
   return this;
 };
 
@@ -106,7 +109,13 @@ Substitute.methods.include = function ( selector ) {
 };
 
 Substitute.methods.image = function (width, height) {
-  return 'https://unsplash.it/'+width+'/'+height+(this.staticLipsum ? '' : '?random=' + Math.random()) ;
+  // If there's a config for a replacement placeholder
+  // service, then override the default.
+  if(this.placeholderService) {
+    return eval('`'+this.placeholderService+'`');
+  } else {
+    return 'https://unsplash.it/'+width+'/'+height+(this.staticLipsum ? '' : '?random=' + Math.random());
+  }
 };
 
 module.exports = Substitute;
