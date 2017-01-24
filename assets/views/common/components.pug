@@ -14,7 +14,10 @@ include ../entities/colors.pug
 include ../entities/icons.pug
 include ../entities/mixins.pug
 
+
+
 mixin components(components)
+
   -var lastEntity = null
   each component in components
 
@@ -98,8 +101,18 @@ mixin component(component)
                 div.SG-table__cell= val.description || ''
 
     -if (component.markup)
+
       div.SG-row
         div.SG-gr-12.SG-nogutter
           div.SG-code.SG-code--hidden.SG-component__markup.language-html(data-d-code-preview)
             code
               | #{component.markup}
+
+    -if (component.script)
+        div.SG-row
+            div.SG-gr-12.SG-nogutter
+                h3.SG-code__title.
+                    Script
+                div.SG-code.SG-code--hidden.SG-component__markup.language-javascript(data-d-code-preview)
+                    code
+                        | #{component.script}

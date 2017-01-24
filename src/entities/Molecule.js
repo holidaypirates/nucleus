@@ -8,7 +8,6 @@
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
  */
-
 'use strict';
 
 var Entity = require('./Entity');
@@ -19,7 +18,7 @@ var Molecule = function(raw) {
 
   // Set molecule-specific entity properties
   this.type = "Molecule";
-  this.fillable = ['molecule', 'section', 'description', 'modifiers', 'markup', 'deprecated'];
+  this.fillable = ['molecule', 'section', 'description', 'modifiers', 'markup', 'deprecated','script'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -32,6 +31,7 @@ var Molecule = function(raw) {
     description: raw.annotations.description,
     modifiers: this.getModifiers(),
     markup: raw.annotations.markup,
+    script: raw.annotations.script || false,
     deprecated: raw.annotations.deprecated,
     hash: this.hash(),
     location: 'molecules.html'

@@ -37,6 +37,10 @@
   }
 }
 
+.SG-code__title{
+    display: none;
+}
+
 /**
  * Alternative code block with monospaced font, maily used for code examples
  * and command instructions on the documentation pages.
@@ -77,4 +81,3 @@
     }
   }
 }
-
