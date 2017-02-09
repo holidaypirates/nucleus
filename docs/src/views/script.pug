@@ -1,0 +1,34 @@
+//-
+  With contributions from:
+    - Alexis Piéplu (alexis.pieplu@savoirfairelinux.com)
+
+extends layouts/doc-page
+
+block title
+  | Script
+
+block content
+  h1.SG-h1 Script
+  p.SG-p.
+    For javascript code linked to your component, use @script tag that will render it in a code block, just below the markup.
+
+  code.code.language-nucleus(data-d-code-preview).
+    /**
+     * Header bar with logo, navigation, and tool icons at the top of the page.
+     *
+     * @structure Header
+     * @flag full-width
+     * @markup
+     *  <div class="SG-header">
+     *    @{include:.SG-logo}
+     *    @{include:.SG-nav-icons}
+     *    @{include:.SG-nav}
+     *  </div>
+     * @script
+     *    $('body').on('click','.SG-header',function(){
+     *        $(this).doSomething();
+     *    });
+     */
+    .SG-header{
+      ...
+    }
