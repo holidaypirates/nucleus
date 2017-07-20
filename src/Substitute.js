@@ -4,6 +4,7 @@
  *
  * With contributions from: -
  *  - Ryan Potter (www.ryanpotter.co.nz)
+ *  - Fritz Stelluto (@gotofritz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -24,6 +25,20 @@ var Substitute = {
 Substitute.injectConfig = function ( config ) {
   this.staticLipsum = config.staticLipsum;
   this.placeholderService = config.placeholderService;
+  if (config.templatePath) {
+    // absolute path
+    if (config.templatePath[0] === '/') {
+      this.templatePath = config.templatePath;
+    }
+    // relative path
+    else {
+      this.templatePath = require('path').join(process.cwd(), config.templatePath);
+    }
+  }
+  else {
+    // no path
+    this.templatePath = process.cwd();
+  }
   return this;
 };
 
@@ -117,5 +132,19 @@ Substitute.methods.image = function (width, height) {
     return 'https://unsplash.it/'+width+'/'+height+(this.staticLipsum ? '' : '?random=' + Math.random());
   }
 };
+
+Substitute.methods.template = function ( selector = '') {
+  selector = selector.trim();
+  var filePath = require('path').join(this.templatePath, selector);
+  var fs = require('fs');
+  try {
+    fs.statSync(filePath);
+    return fs.readFileSync(filePath).toString();
+  }
+  catch (e) {
+    Verbose.warn('unknown_template', [filePath, selector, this.templatePath]);
+    return '';
+  }
+}
 
 module.exports = Substitute;

@@ -56,4 +56,29 @@ describe('Substitution', function () {
     assert.ok(subs.split(' ').length === 3);
 
   });
+
+
+  /********************************************************/
+
+  it('includes templates', function () {
+    var markup = 'Test @{template: assets/test-fixtures/substitition-template.html}';
+    Substitute.injectConfig({});
+    var subs = Substitute.substitute(markup);
+    assert.ok(subs.indexOf('{template') === -1);
+    assert.ok(/---TEMPLATE---$/.test(subs));
+
+    markup = 'Test @{template: substitition-template.html}';
+    Substitute.injectConfig({
+      templatePath: 'assets/test-fixtures'
+    });
+    var subs = Substitute.substitute(markup);
+    assert.ok(subs.indexOf('{template') === -1);
+    assert.ok(/---TEMPLATE---$/.test(subs));
+
+    markup = 'Test @{template: random-file.txt}';
+    Substitute.injectConfig({});
+    var subs = Substitute.substitute(markup);
+    assert.ok(subs.indexOf('{template') === -1);
+    assert.ok(!/---TEMPLATE---$/.test(subs));
+  });
 });

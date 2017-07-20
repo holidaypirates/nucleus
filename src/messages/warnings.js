@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Fritz Stelluto (@gotofritz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -67,6 +68,14 @@ module.exports = {
       'title': 'Can\'t find selector ' + selector + ' for markup substitution',
       'text': 'You try to substitute with @{include:' + selector + '}, but ' + selector + ' cannot be found. ' +
         'Make sure '+selector+' really exists and it is annotated (which makes it \'visible\' for Nucleus.'
+    };
+  },
+  // Whenever we try to substitute with unknown  markup template.
+  'unknown_template': function (filePath, selector, templatePath) {
+    return {
+      'title': 'Can\'t find template ' + filePath + ' for markup substitution',
+      'text': 'You try to substitute with @{template:' + selector + '}, but path cannot be found. ' +
+        'Make sure the file really exists and check templatePath '+templatePath+' in the config'
     };
   },
 };
