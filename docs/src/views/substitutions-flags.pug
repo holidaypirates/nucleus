@@ -49,6 +49,17 @@ block content
       div.SG-config__label Example
       div.SG-config__value @{image:400:300}
 
+  div.SG-config
+    div.SG-config__row
+      div.SG-config__label Substitution
+      div.SG-config__value @{template:path}
+    div.SG-config__row
+      div.SG-config__label Description
+      div.SG-config__value Include the whole content of file. 'path' is either an absolute path, a path relative to where nucleus is being run, or a path appended to the config variable templatePath
+    div.SG-config__row
+      div.SG-config__label Example
+      div.SG-config__value @{template: src/templates/navigation.html}
+
   code.code.language-nucleus(data-d-code-preview).
     /**
      * A navigation element for the menu bar.
