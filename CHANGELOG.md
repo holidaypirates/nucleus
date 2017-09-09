@@ -7,7 +7,18 @@
                          |___/              |___/
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ VERSION 1.1.0                                                   __.09.2016 ┃
+┃ VERSION 1.1.1                                                   04.05.2017 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Bugfixes
+--------
+
+* Remove !default from color variables before parsing (thanks Chris Tarczon).
+
+* Documentation fixes from pieplu, cheers!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.1.0                                                   24.01.2017 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 Features
@@ -26,6 +37,32 @@ Bugfixes
 
 * Lots of documentation typo fixes and small style fixes for both Nucleus
   and the docs.
+* Added support for @script annotations (shout-out to jcfariadias,
+  pieplu and Joao Dias).
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.0.9                                                   16.12.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Features
+--------
+
+* Added support for @modifier flag (thanks again, Ryan Potter).
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERSION 1.0.8                                                   16.11.2016 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Announcement
+------------
+
+* We are actively developing 1.1.0 with support for LESS and Mixin-Defined
+  colors, as well as ES 6 syntax and better error handling. Stay tuned!
+
+Features
+--------
+
+* Added Config for alternative placeholder services (thanks Ryan Potter).
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ VERSION 1.0.7                                                   30.08.2016 ┃

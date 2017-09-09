@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -19,7 +20,7 @@ const path = require('path');
 const Crawler = {};
 
 /**
- * Reads the files content and returnes the parsed styleguide information.
+ * Reads the files content and returns the parsed styleguide information.
  *
  * @param  {string} file
  *         Filename

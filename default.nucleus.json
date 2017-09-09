@@ -6,10 +6,11 @@
     "*.less",
     "**/*.less"
   ],
-  "target"  : "styleguide",
-  "css" : [],
+  "target" : "styleguide",
+  "css" : null,
   "namespace": "page",
   "verbose" : 3,
   "counterCSS" : null,
-  "staticLipsum" : false
+  "staticLipsum" : false,
+  "placeholderService" : false
 }

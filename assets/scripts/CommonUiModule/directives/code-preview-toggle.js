@@ -15,7 +15,7 @@ $('[data-d-code-preview-toggle]').each(function (i, element ) {
   $(element).on('click', function () {
     $(element)
       .closest('.SG-component')
-      .find('.SG-component__markup')
+      .find('.SG-component__markup, .SG-code__title')
       .stop()
       .clearQueue()
       .slideToggle(250);

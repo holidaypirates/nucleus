@@ -52,6 +52,23 @@ describe('Color', function() {
 
   /********************************************************/
 
+  it('should transform raw input data with !default to a color entity', function() {
+    var c = new Color({
+      annotations: {
+        description: 'Default Testcolor',
+        color: true
+      },
+      element: {
+        prop: '$testcolor',
+        value: '#00FF00 !default'
+      }
+    });
+
+    assert.equal(c.values.hex, '#00FF00');
+  });
+
+  /********************************************************/
+
   it('should set a single-line color description as main description', function() {
     var c = new Color({
       annotations: {

@@ -29,19 +29,22 @@ describe('Atom', function() {
       annotations: {
         description: 'A test description',
         atom: 'Test-Component',
-        markup: '...'
+        markup: '...',
+        script: '....'
       }
     });
 
     assert.deepEqual(a, {
         name: 'Test-Component',
         type: 'atom',
-        hash: '7cf4b2beae2f0536b3ebb3030ccef2ed3d89c0fe',
+        hash: '47edcec9fa48df43335b12fc0e3e1cc9a4709bf1',
         descriptor: '.test',
         location: 'atoms.html',
         section: 'Atoms > Other',
         description: 'A test description',
+        modifiers: null,
         markup: '...',
+        script: '....',
         deprecated: false
     });
   });
@@ -57,6 +60,7 @@ describe('Atom', function() {
         description: 'A test description',
         atom: 'Test-Component',
         markup: '...',
+        script: '...',
         deprecated: true
       }
     });
@@ -64,12 +68,14 @@ describe('Atom', function() {
     assert.deepEqual(a, {
         name: 'Test-Component',
         type: 'atom',
-        hash: 'f7f408f0cf9b50d98473832406bb5ea2b750db2a',
+        hash: '1af43675b26c728f36bb88af3dcabdc7c0dc9a35',
         descriptor: '.test',
         location: 'atoms.html',
         section: 'Atoms > Other',
         description: 'A test description',
+        modifiers: null,
         markup: '...',
+        script: '...',
         deprecated: true
     });
   });

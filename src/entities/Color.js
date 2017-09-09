@@ -2,7 +2,8 @@
  *
  * Copyright (C) 2016 Michael Seibt
  *
- * With contributions from: -
+ * With contributions from:
+ *  - Chris Tarczon (@tarczonator)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -29,7 +30,7 @@ var Color = function(raw) {
     raw.annotations.description = raw.annotations.color;
   }
 
-  var colorValue = ColorConverter(raw.element.value);
+  var colorValue = ColorConverter(raw.element.value.replace(/ *!default/, ''));
 
   return {
     name: raw.descriptor,

@@ -7,6 +7,7 @@
     "docs/src/styles/**/*.scss"
   ],
   "css": "../docs/build/styles/app.css",
-  "target"  : "styleguide",
-  "namespace": null
+  "target"  : "./styleguide",
+  "namespace": null,
+  "scripts" : ["./scripts/ui-kit.js","./assets/scripts/ui-kit2.js"]
 }

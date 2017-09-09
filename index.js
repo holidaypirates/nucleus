@@ -120,6 +120,7 @@ for(var t in templateFiles) {
       title: config.title,
       namespace: config.namespace,
       counterCSS: config.counterCSS,
+      scripts: config.scripts,
       demo: !!config.demo
     }
   });

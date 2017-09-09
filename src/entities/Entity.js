@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -26,7 +27,7 @@ var Entity = function(raw) {
 /**
  * Checks the incoming raw style data for common mistakes.
  *
- * @return {book}
+ * @return {bool}
  *         Returns true if the style is solid enough for further processing.
  */
 Entity.prototype.validate = function() {
@@ -94,7 +95,7 @@ Entity.prototype.getSection = function() {
 };
 
 /**
- * Returns the name of the element the entity referes to. This could be a
+ * Returns the name of the element the entity refers to. This could be a
  * selector, a property or a mixin.
  *
  * @return {string}
@@ -104,6 +105,48 @@ Entity.prototype.getDescriptor = function() {
     this.raw.element.prop ||
     this.raw.element.selector ||
     this.raw.element.params || 'unknown' : 'unknown';
+};
+
+/**
+ * Returns an array based on new lines for formatting.
+ *
+ * @returns {*}
+ */
+Entity.prototype.getModifiers = function () {
+  // Check for a modifier annotation.
+  if (typeof this.raw.annotations.modifiers !== 'undefined' && this.raw.annotations.modifiers !== null) {
+    const modifiers        = this.raw.annotations.modifiers;
+    const modifiersArray   = modifiers.split('\n');
+    let formattedModifiers = []; // the container array for final output.
+    /**
+     * Loop through the modifier annotation, and
+     * return the class names and descriptions as
+     * an array for formatting.
+     */
+    modifiersArray.map((value) => {
+      let modifier;
+      /**
+       * Check if the modifier has any white space
+       * (has a description). Return the appropriate object
+       * for formatting.
+       */
+      if (value.indexOf(' ') >= 0) {
+        modifier = {
+          class: value.substr(0, value.indexOf(' ')),
+          description: value.substr(value.indexOf(' ') + 1),
+        };
+      } else {
+        modifier = {
+          class: value,
+          description: null,
+        };
+      }
+      // Add to the output array.
+      formattedModifiers.push(modifier);
+    });
+    return formattedModifiers;
+  }
+  return null;
 };
 
 Entity.prototype.hash = function() {

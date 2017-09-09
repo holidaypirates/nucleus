@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -42,7 +43,7 @@ Transform.forView = function(styles) {
     var entity = this.createEntity(style);
 
     // If entity is empty, we cold not specify a type or
-    // validation failed during entity instanciation.
+    // validation failed during entity instantiation.
     if (!entity || (Object.keys(entity).length === 0)) {
       continue;
     }
@@ -98,7 +99,7 @@ Transform.getStyleType = function(style) {
 };
 
 /**
- * Returns wheather a style has a given annotation.
+ * Returns whether a style has a given annotation.
  *
  * @param  {string}  key
  * @param  {object}  style

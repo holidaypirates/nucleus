@@ -3,6 +3,7 @@
  * Copyright (C) 2016 Michael Seibt
  *
  * With contributions from: -
+ *  - Ryan Potter (www.ryanpotter.co.nz)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -17,7 +18,7 @@ var Molecule = function(raw) {
 
   // Set molecule-specific entity properties
   this.type = "Molecule";
-  this.fillable = ['molecule', 'section', 'description', 'markup', 'deprecated', 'flag'];
+  this.fillable = ['molecule', 'section', 'description', 'modifiers', 'markup', 'deprecated', 'flag', 'script'];
 
   // Validate the raw input data for common mistakes
   if (!this.validate()) return {};
@@ -28,7 +29,9 @@ var Molecule = function(raw) {
     descriptor: raw.descriptor,
     section: 'Molecules > ' + this.getSection(),
     description: raw.annotations.description,
+    modifiers: this.getModifiers(),
     markup: raw.annotations.markup,
+    script: raw.annotations.script || false,
     deprecated: raw.annotations.deprecated,
     hash: this.hash(),
     flags: this.getFlags(),

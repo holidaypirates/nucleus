@@ -10,6 +10,7 @@
 
 include ./toc.pug
 
+
 doctype html
 html(lang="en")
   head
@@ -38,3 +39,6 @@ html(lang="en")
       block content
 
     script(src="scripts/app.js")
+    -if(meta.scripts)
+        each script in meta.scripts
+            script(src=script)
