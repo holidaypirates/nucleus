@@ -12,5 +12,6 @@
   "verbose" : 3,
   "counterCSS" : null,
   "staticLipsum" : false,
-  "placeholderService" : false
+  "placeholderService" : false,
+  "scssEntry": null
 }

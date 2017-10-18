@@ -10,6 +10,8 @@ Ryan Potter ([Github](https://github.com/rhym) &bull; [Twitter](https://twitter.
 
 Thomas Carlson ([Github](https://github.com/thomas0c) &bull; [Twitter](https://twitter.com/thomasoc))
 
+Philipp Mandler ([Github](https://github.com/phlmn))
+
 # Special thanks to
 
 Alexander Zhukov ([GitHub](https://github.com/nogizhopaboroda) &bull; [Twitter](https://twitter.com/nogizhopaboroda))

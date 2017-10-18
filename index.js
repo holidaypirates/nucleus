@@ -6,6 +6,7 @@
  *
  * With contributions from:
  *  - Marco Vito Moscaritolo (@mavimo)
+ *  - Philipp Mandler (phl.mn)
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -22,6 +23,8 @@ var Substitute = require('./src/Substitute');
 var SearchIndex = require('./src/SearchIndex');
 
 var jade = require('pug');
+var sass = require('node-sass');
+var fs = require('fs');
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +79,9 @@ for(var f in config.files) {
 |
 */
 
-styles = Resolver.resolveAll(styles);
+if(config.scssEntry) {
+  styles = Resolver.resolveAll(styles, config.scssEntry);
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +113,19 @@ Verbose.spin('Generating files');
 // Create the target folder
 require('mkdirp').sync(config.target);
 
+// Build scss if scssEntry is specified
+var css = [].concat(config.css);
+require('mkdirp').sync(config.target + '/rendered_styles');
+if(config.scssEntry) {
+  var scssFile = 'rendered_styles/styles.css';
+  console.log(scssFile);
+  var renderedScss = sass.renderSync({
+    file: config.scssEntry
+  });
+  fs.writeFileSync(config.target + '/' + scssFile, renderedScss.css);
+  css.push(scssFile);
+}
+
 // Build the template files
 var templateFiles = ['atoms', 'molecules', 'index', 'nuclides', 'structures'];
 for(var t in templateFiles) {
@@ -116,7 +134,7 @@ for(var t in templateFiles) {
     styles : styleguides,
     index: searchIndex,
     meta: {
-      css: config.css,
+      css: css,
       title: config.title,
       namespace: config.namespace,
       counterCSS: config.counterCSS,
@@ -129,7 +147,6 @@ for(var t in templateFiles) {
 
 // Copy assets
 if(config.target !== 'build') {
-var fs = require('fs');
 require('mkdirp').sync(config.target + '/styles');
 require('mkdirp').sync(config.target + '/fonts');
 require('mkdirp').sync(config.target + '/scripts');

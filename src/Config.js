@@ -134,6 +134,7 @@ Config.getFromArguments = function () {
   if(argv.template)             cliConfig.template = argv.template;
   if(argv.placeholderservice)   cliConfig.placeholderService = argv.placeholderservice;
   if(argv.norandom)             cliConfig.staticLipsum = !!argv.norandom;
+  if(argv.scssEntry)            cliConfig.scssEntry = !!argv.scssEntry;
 
   return cliConfig;
 };
