@@ -113,19 +113,6 @@ Verbose.spin('Generating files');
 // Create the target folder
 require('mkdirp').sync(config.target);
 
-// Build scss if scssEntry is specified
-var css = [].concat(config.css);
-require('mkdirp').sync(config.target + '/rendered_styles');
-if(config.scssEntry) {
-  var scssFile = 'rendered_styles/styles.css';
-  console.log(scssFile);
-  var renderedScss = sass.renderSync({
-    file: config.scssEntry
-  });
-  fs.writeFileSync(config.target + '/' + scssFile, renderedScss.css);
-  css.push(scssFile);
-}
-
 // Build the template files
 var templateFiles = ['atoms', 'molecules', 'index', 'nuclides', 'structures'];
 for(var t in templateFiles) {
@@ -134,7 +121,7 @@ for(var t in templateFiles) {
     styles : styleguides,
     index: searchIndex,
     meta: {
-      css: css,
+      css: config.css,
       title: config.title,
       namespace: config.namespace,
       counterCSS: config.counterCSS,
