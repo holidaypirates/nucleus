@@ -23,7 +23,6 @@ var Substitute = require('./src/Substitute');
 var SearchIndex = require('./src/SearchIndex');
 
 var jade = require('pug');
-var sass = require('node-sass');
 var fs = require('fs');
 
 /*
