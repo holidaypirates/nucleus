@@ -46,7 +46,7 @@ Resolver.resolveAll = function (styles, scssEntry) {
         r: variable.value.r,
         g: variable.value.g,
         b: variable.value.b,
-        a: variable.value.a
+        alpha: variable.value.a
        };
     }
   });
