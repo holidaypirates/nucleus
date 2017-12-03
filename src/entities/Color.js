@@ -30,14 +30,7 @@ var Color = function(raw) {
     raw.annotations.description = raw.annotations.color;
   }
 
-  var rawColor = raw.element.value;
-
-  var colorValue = ColorConverter({
-    r: rawColor.r,
-    g: rawColor.g,
-    b: rawColor.b,
-    a: rawColor.a
-  });
+  var color = ColorConverter(raw.element.value);
 
   return {
     name: raw.descriptor,
@@ -49,9 +42,9 @@ var Color = function(raw) {
     location: 'nuclides.html',
     hash: this.hash(),
     values: {
-      hex: colorValue.hex(),
-      rgb: colorValue.rgb().string(),
-      darker: colorValue.darken(0.1).rgb().string()
+      hex: color.hex(),
+      rgb: color.rgb().string(),
+      darker: color.darken(0.1).rgb().string()
     }
   };
 
