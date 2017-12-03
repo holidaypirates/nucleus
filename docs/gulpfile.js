@@ -147,7 +147,7 @@ gulp.task('build:views', [], function () {
         'app': './app',
       },
       output: {
-        path: config.target + '/scripts/',
+        path: __dirname + '/' + config.target + '/scripts/',
         publicPath: '/scripts/',
         filename: '[name].js',
         chunkFilename: '[chunkhash].bundle.js'
@@ -159,9 +159,9 @@ gulp.task('build:views', [], function () {
       },
       amd: {jQuery: true },
       resolve: {
-        fallback: [
-          __dirname + '/' + config.sources + '/scripts'
-        ]
+        // fallback: [
+        //   __dirname + '/' + config.sources + '/scripts'
+        // ]
       },
       plugins: [
         new webpack.ProvidePlugin({

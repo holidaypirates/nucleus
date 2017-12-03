@@ -44,7 +44,7 @@ describe('Color', function() {
       deprecated: false,
       values: {
         hex: '#00FF00',
-        rgba: 'rgba(0, 255, 0, 1)',
+        rgb: 'rgb(0, 255, 0)',
         darker: '#00E600'
       }
     });
@@ -77,7 +77,7 @@ describe('Color', function() {
       },
       element: {
         prop: '$testcolor',
-        value: '#00FF00'
+        value: 'rgba(0, 255, 0, 0.2)'
       }
     });
     assert.deepEqual(c, {
@@ -91,7 +91,7 @@ describe('Color', function() {
       deprecated: true,
       values: {
         hex: '#00FF00',
-        rgba: 'rgba(0, 255, 0, 1)',
+        rgb: 'rgba(0, 255, 0, 0.2)',
         darker: '#00E600'
       }
     });

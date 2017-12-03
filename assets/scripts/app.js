@@ -11,4 +11,4 @@
 
 'use strict';
 
-require('CommonUiModule/module');
+require('./CommonUiModule/module');

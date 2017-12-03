@@ -152,7 +152,7 @@ gulp.task('clean:static', function () {
         'app': './app',
       },
       output: {
-        path: TARGET + '/scripts/',
+        path: __dirname + '/' + TARGET + '/scripts/',
         publicPath: '/scripts/',
         filename: '[name].js',
         chunkFilename: '[chunkhash].bundle.js'
@@ -164,9 +164,9 @@ gulp.task('clean:static', function () {
       },
       amd: {jQuery: true },
       resolve: {
-        fallback: [
-          __dirname + '/' + SOURCES + '/scripts'
-        ]
+        // fallback: [
+        //   __dirname + '/' + SOURCES + '/scripts'
+        // ]
       },
       plugins: [
         new webpack.ProvidePlugin({

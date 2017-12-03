@@ -42,9 +42,9 @@ var Color = function(raw) {
     location: 'nuclides.html',
     hash: this.hash(),
     values: {
-      hex: colorValue.hexString(),
-      rgba: colorValue.rgbaString(),
-      darker: colorValue.darken(0.1).hexString()
+      hex: colorValue.hex(),
+      rgb: colorValue.rgb().string(),
+      darker: colorValue.darken(0.1).hex()
     }
   };
 
