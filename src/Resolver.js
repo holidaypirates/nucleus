@@ -42,7 +42,12 @@ Resolver.resolveAll = function (styles, scssEntry) {
     // Set color to extracted value if found.
     if(variable && variable.type == 'SassColor') {
       style.originalValue = original;
-      style.element.value = variable.value;
+      style.element.value = {
+        r: variable.value.r,
+        g: variable.value.g,
+        b: variable.value.b,
+        a: variable.value.a
+       };
     }
   });
 
