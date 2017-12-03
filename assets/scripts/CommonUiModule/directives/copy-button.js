@@ -20,7 +20,7 @@ $('[data-d-copy]').each(function (i, element ) {
   copy.on('success', function () {
     SweetAlert({
       title: "Copied!",
-      type: "success",
+      icon: "success",
       confirmButtonText: "Cool",
       timer: 1500,
       allowOutsideClick: true
