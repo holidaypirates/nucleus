@@ -30,7 +30,14 @@ var Color = function(raw) {
     raw.annotations.description = raw.annotations.color;
   }
 
-  var colorValue = ColorConverter(raw.element.value.replace(/ *!default/, ''));
+  var rawColor = raw.element.value;
+
+  var colorValue = ColorConverter({
+    r: rawColor.r,
+    g: rawColor.g,
+    b: rawColor.b,
+    a: rawColor.a
+  });
 
   return {
     name: raw.descriptor,
