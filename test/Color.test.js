@@ -45,7 +45,7 @@ describe('Color', function() {
       values: {
         hex: '#00FF00',
         rgb: 'rgb(0, 255, 0)',
-        darker: '#00E600'
+        darker: 'rgb(0, 230, 0)'
       }
     });
   });
@@ -92,7 +92,7 @@ describe('Color', function() {
       values: {
         hex: '#00FF00',
         rgb: 'rgba(0, 255, 0, 0.2)',
-        darker: '#00E600'
+        darker: 'rgba(0, 230, 0, 0.2)'
       }
     });
   });

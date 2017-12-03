@@ -57,3 +57,10 @@ $color--dark-gray: #4a4a4a;
  * @section Grayscale
  */
 $color--blackish: #333;
+
+/**
+ * Half transparent black
+ * @color
+ * @section Transparency
+ */
+$color--semi-transparent: rgba(0, 0, 0, 0.5);

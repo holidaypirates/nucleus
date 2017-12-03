@@ -42,7 +42,7 @@ Resolver.resolveAll = function (styles, scssEntry) {
     // Set color to extracted value if found.
     if(variable && variable.type == 'SassColor') {
       style.originalValue = original;
-      style.element.value = variable.value.hex;
+      style.element.value = variable.value.rgba;
     }
   });
 

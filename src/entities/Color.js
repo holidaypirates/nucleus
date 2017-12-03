@@ -44,7 +44,7 @@ var Color = function(raw) {
     values: {
       hex: colorValue.hex(),
       rgb: colorValue.rgb().string(),
-      darker: colorValue.darken(0.1).hex()
+      darker: colorValue.darken(0.1).rgb().string()
     }
   };
 
