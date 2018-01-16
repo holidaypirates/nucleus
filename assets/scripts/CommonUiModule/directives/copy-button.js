@@ -11,19 +11,20 @@
 'use strict';
 
 /** Dependencies */
-var SweetAlert = require('sweetalert');
+var SweetAlert2 = require('sweetalert2');
 var Clipboard = require('clipboard');
 
 /** Directive */
 $('[data-d-copy]').each(function (i, element ) {
   var copy = new Clipboard(element);
   copy.on('success', function () {
-    SweetAlert({
+    SweetAlert2({
       title: "Copied!",
       type: "success",
-      confirmButtonText: "Cool",
-      timer: 1500,
-      allowOutsideClick: true
+      toast: true,
+      showConfirmButton: false,
+      position: 'top-right',
+      timer: 1500
     });
   });
 
